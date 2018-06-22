@@ -1,0 +1,20 @@
+<div class="container-wrapper container d-flex justify-content-center align-items-center">
+    <div class="form-wrapper text-center" style="width: 80%; background-color: #eef ; padding: 1.5em">
+        <h2 class="text-center">Add/Edit PetType </h2>
+        <form [formGroup]="petTypeForm" (submit)="submit()" novalidate>
+
+                <div class="form-group">
+                    <label for="name-input"><span translate>name</span></label>
+<input type="text" class="form-control" id="name-input"
+                                   formControlName="name">
+                    <div class="alert alert-danger" *ngIf="petTypeForm.get('name').errors && petTypeForm.get('name').touched">
+                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
+                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+                    </div>
+                </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+</div>

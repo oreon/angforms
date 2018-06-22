@@ -1,0 +1,116 @@
+<div class="container-fluid">
+  <div >
+    <h1>
+      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo"/>
+      <span translate>Hello world !</span>
+    </h1>
+    <app-loader [isLoading]="isLoading"></app-loader>
+    <q [hidden]="isLoading">{{quote}}</q>
+  </div>
+
+  <form [formGroup]="petForm" (submit)="submit()" novalidate>
+
+    <div class="form-group">
+        <label for="name-input">name</label>
+<input type="text" class="form-control" id="name-input"
+                       formControlName="name">
+        <div class="alert alert-danger" *ngIf="petForm.get('name').errors && petForm.get('name').touched">
+            <p *ngIf="petForm.get('name').errors.required">Required !</p>
+            <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+            <p *ngIf="petForm.get('name').errors.minlength"> must be {{petForm.get('name').errors.minlength.requiredLength}} characters </p>
+        </div>                
+    </div>
+
+
+    <div class="form-group">
+        <label for="price-input">price</label>
+<input type="number" class="form-control" id="price-input"
+                       formControlName="price">
+        <p class="error_message"
+           *ngIf="petForm.get('price').invalid && (petForm.submitted || petForm.get('price').dirty)">
+            This is required</p>
+    </div>
+
+
+    <div class="form-group">
+        <label for="dob-input">dob</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+          formControlName="dob"  id="dob-input" ngbDatepicker  #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+              <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+            </button>
+          </div>
+        </div>
+        <p class="error_message"
+           *ngIf="petForm.get('dob').invalid && (petForm.submitted || petForm.get('dob').dirty)">
+            This is required</p>
+    </div>
+
+
+    <div class="form-group">
+        <label for="weight-input"  translate><span translate>weight</span></label>
+<input type="number" class="form-control" id="weight-input"
+                       formControlName="weight">
+        <p class="error_message"
+           *ngIf="petForm.get('weight').invalid && (petForm.submitted || petForm.get('weight').dirty)">
+            This is required</p>
+    </div>
+
+    <div class="form-group">
+        <label for="neutered-input">neutered</label>
+        
+        <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" 
+          formControlName="neutered">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+          </label>
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+          </label>
+         </div>
+
+         <div class="alert alert-danger" *ngIf="petForm.get('neutered').errors && petForm.get('neutered').touched">
+          
+          <p *ngIf="petForm.get('neutered').errors.required">Sorry you cant sell this pet</p>
+      </div>  
+    </div>
+
+
+    <div class="form-group">
+        <label for="description-input">description</label>
+<textarea id="description-input" formControlName="description" ></textarea>
+        <p class="error_message"
+           *ngIf="petForm.get('description').invalid && (petForm.submitted || petForm.get('description').dirty)">
+            This is required</p>
+    </div>
+
+
+    <div class="form-group">
+        <label for="status-input">status</label>
+          <ng-select formControlName="status">
+            <ng-option [value]="SICK">SICK</ng-option>
+            <ng-option [value]="Available">Available</ng-option>
+          </ng-select>
+
+        <p class="error_message"
+           *ngIf="petForm.get('status').invalid && (petForm.submitted || petForm.get('status').dirty)">
+            This is required</p>
+    </div>
+
+        <!-- <div class="card">
+            <button type="button" (click)="addskills()">Add skills</button>
+            <ul>
+                <li *ngFor=" let skills of entity.skills; let i = index">
+                    <app-skill-add ></app-skill-add>∏
+                    <button (click)="removeskills(i)">Remove</button>
+                </li>
+            </ul>
+        </div> -->
+
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+</div>

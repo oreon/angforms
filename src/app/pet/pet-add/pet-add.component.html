@@ -1,0 +1,146 @@
+<div class="container-wrapper container d-flex justify-content-center align-items-center">
+    <div class="form-wrapper text-center" style="width: 80%; background-color: #eef ; padding: 1.5em">
+        <h2 class="text-center">Add/Edit Pet </h2>
+        <form [formGroup]="petForm" (submit)="submit()" novalidate>
+
+                <div class="form-group">
+                    <label for="name-input"><span translate>name</span></label>
+<input type="text" class="form-control" id="name-input"
+                                   formControlName="name">
+                    <div class="alert alert-danger" *ngIf="petForm.get('name').errors && petForm.get('name').touched">
+                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
+                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="price-input"><span translate>price</span></label>
+<input type="number" class="form-control" id="price-input"
+                                   formControlName="price">
+                    <div class="alert alert-danger" *ngIf="petForm.get('price').errors && petForm.get('price').touched">
+                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
+                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="type-input"><span translate>type</span></label>
+                            <ng-select [items]="petTypes$ | async"
+                                       bindLabel="name"
+                                       bindValue="id"
+                                       [(ngModel)]="entity.type">
+                            </ng-select>
+                        
+                    <div class="alert alert-danger" *ngIf="petForm.get('type').errors && petForm.get('type').touched">
+                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
+                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="parentType-input"><span translate>parentType</span></label>
+                            <ng-select [items]="petTypes$ | async"
+                                       bindLabel="name"
+                                       bindValue="id"
+                                       [(ngModel)]="entity.parentType">
+                            </ng-select>
+                        
+                    <div class="alert alert-danger" *ngIf="petForm.get('parentType').errors && petForm.get('parentType').touched">
+                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
+                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="dob-input"><span translate>dob</span></label>
+<div class="input-group">
+                                <input class="form-control" placeholder="yyyy-mm-dd"
+                                       formControlName="dob"  id="dob-input" ngbDatepicker #d="ngbDatepicker">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                                        <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                    </button>
+                                </div>
+                            </div>
+                    <div class="alert alert-danger" *ngIf="petForm.get('dob').errors && petForm.get('dob').touched">
+                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
+                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="weight-input"><span translate>weight</span></label>
+<input type="number" class="form-control" id="weight-input"
+                                   formControlName="weight">
+                    <div class="alert alert-danger" *ngIf="petForm.get('weight').errors && petForm.get('weight').touched">
+                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
+                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="neutered-input"><span translate>neutered</span></label>
+<div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
+                                 formControlName="neutered">
+                                <label ngbButtonLabel class="btn-primary">
+                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                                </label>
+                                <label ngbButtonLabel class="btn-primary">
+                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                                </label>
+                            </div>
+
+                    <div class="alert alert-danger" *ngIf="petForm.get('neutered').errors && petForm.get('neutered').touched">
+                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
+                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="description-input"><span translate>description</span></label>
+<textarea id="description-input" formControlName="description"
+                                      [(ngModel)]="entity.description"></textarea>
+                    <div class="alert alert-danger" *ngIf="petForm.get('description').errors && petForm.get('description').touched">
+                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
+                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="status-input"><span translate>status</span></label>
+<ng-select formControlName="status">
+<ng-option [value]="Rcvd">RCVD</ng-option>
+<ng-option [value]="Ordrd">ORDRD</ng-option>
+<ng-option [value]="Dlvrd">DLVRD</ng-option>
+                            </ng-select>
+
+                    <div class="alert alert-danger" *ngIf="petForm.get('status').errors && petForm.get('status').touched">
+                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
+                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
+                    </div>
+                </div>
+
+                    <div class="card">
+                        <button (click)="addskills()">Add skills</button>
+                        <ul>
+                            <li *ngFor=" let skills of entity.skills; let i = index">
+                                <app-skill-add ></app-skill-add>
+                                <button (click)="removeskills(i)">X</button>
+                            </li>
+                        </ul>
+                    </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+</div>
