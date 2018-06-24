@@ -15,7 +15,7 @@ type : PetType   ;
 parentType : PetType   ;
 dob : Date
 weight : number
-neutered : Boolean
+neutered : boolean
 description : string
 status : Status
 skills : Skill   []  ;

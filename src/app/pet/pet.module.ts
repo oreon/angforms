@@ -8,7 +8,6 @@ import { PetEditComponent } from './pet-edit/pet-edit.component';
 import { PetRoutingModule} from './pet-routing.module';
 import { NgSelectModule,NG_SELECT_DEFAULT_CONFIG } from '@ng-select/ng-select';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SkillModule } from '@app/skill/skill.module';
 
 //import { JsonSchemaFormModule }               from 'angular2-json-schema-form';
 @NgModule({
@@ -19,7 +18,6 @@ import { SkillModule } from '@app/skill/skill.module';
     NgSelectModule,
     NgbModule,
     PetRoutingModule,
-    SkillModule
   ],
   declarations: [
     PetListComponent,

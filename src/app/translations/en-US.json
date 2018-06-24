@@ -1,4 +1,79 @@
-{
 
+{
+    //pets
+"Pet_name": "Name",
+
+"Pet_price": "Price",
+
+"Pet_type": "Type",
+
+"Pet_parentType": "Parent type",
+
+"Pet_dob": "Dob",
+
+"Pet_weight": "Weight",
+
+"Pet_neutered": "Neutered",
+
+"Pet_description": "Description",
+
+"Pet_status": "Status",
+
+"Pet_skills": "Skills",
+
+"QuoteData_haveCare": "Have care",
+
+"QuoteData_alreadyDeparted": "Already departed",
+
+"QuoteData_over60": "Over60",
+
+"QuoteData_departure": "Departure",
+
+"QuoteData_returnDate": "Return date",
+
+"QuoteData_dobOldest": "Dob oldest",
+
+"QuoteData_planMember": "Plan member",
+
+"QuoteData_groupNumber": "Group number",
+
+"QuoteData_idNumber": "Id number",
+
+"QuoteData_planType": "Plan type",
+
+"QuoteData_interestedExtra": "Interested extra",
+
+"QuoteData_initialPaymentWithinLast72": "Initial payment within last72",
+
+"QuoteData_coverageLevel": "Coverage level",
+
+"QuoteData_chosenExtra": "Chosen extra",
+
+"QuoteData_travellingForMedical": "Travelling for medical",
+
+"QuoteData_travellingAgainstAdvice": "Travelling against advice",
+
+"QuoteData_twoOrMoreStrokes": "Two or more strokes",
+
+"QuoteData_icd": "Icd",
+
+"QuoteData_homeOxygen": "Home oxygen",
+
+"QuoteData_terminal": "Terminal",
+
+"QuoteData_ninetyDayStable": "Ninety day stable",
+
+"QuoteData_planTotal": "Plan total",
+
+"QuoteData_trn": "Trn",
+
+"Skill_name": "Name",
+
+"Skill_level": "Level",
+
+"PetType_name": "Name",
 
 }
+
+
+

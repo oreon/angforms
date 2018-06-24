@@ -1,5 +1,6 @@
 
 export enum Status{
-    SICK,
-    Available
+'Rcvd',
+'Ordrd',
+'Dlvrd',
 }

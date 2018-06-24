@@ -32,7 +32,7 @@
                                        bindValue="id"
                                        [(ngModel)]="entity.type">
                             </ng-select>
-                        
+
                     <div class="alert alert-danger" *ngIf="petForm.get('type').errors && petForm.get('type').touched">
                         <p *ngIf="petForm.get('name').errors.required">Required !</p>
                         <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
@@ -47,7 +47,7 @@
                                        bindValue="id"
                                        [(ngModel)]="entity.parentType">
                             </ng-select>
-                        
+
                     <div class="alert alert-danger" *ngIf="petForm.get('parentType').errors && petForm.get('parentType').touched">
                         <p *ngIf="petForm.get('name').errors.required">Required !</p>
                         <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
