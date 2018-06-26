@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { HomeComponent, MySkillComponent } from './home.component';
 import { QuoteService } from './quote.service';
 import { SkillModule } from '@app/skill/skill.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -25,7 +25,7 @@ import { NgbAccordion, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
   ],
   providers: [
     QuoteService

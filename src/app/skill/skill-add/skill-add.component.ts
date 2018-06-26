@@ -1,6 +1,6 @@
 
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 
 import { Skill} from "../skill";
@@ -27,15 +27,25 @@ export class SkillAddComponent  extends BaseAdd<Skill> implements OnInit {
         this.createForm();
     }
 
+
     private createForm(): void {
-        this.skillForm = this.fb.group({
-name : ['', [Validators.required]],
-level : ['', [Validators.required]],
+        this.skillForm= this.fb.group({
+name : ['', [  Validators.required ]],
+level : ['', [  Validators.required ]],
         //email: ['', [Validators.required, Validators.email]],
         //password: ['', [Validators.required, Validators.minLength(8)]]
         });
     }
 
+
+
+    submit(){
+        Object.keys(this.skillForm.controls).forEach(field =>
+            this.skillForm.get(field).markAsTouched()
+        );
+        console.log(this.skillForm.value)
+        //console.log("entity", this.entity)
+    }
 
 }
 

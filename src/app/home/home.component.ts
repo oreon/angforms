@@ -4,13 +4,15 @@ import { finalize } from 'rxjs/operators';
 import { QuoteService } from './quote.service';
 
 import {Component,  OnInit, Output} from '@angular/core';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 
 
 import {PetType} from "@app/petType/petType";
 import {Skill} from "@app/skill/skill";
 import { Pet } from '@app/pet/pet';
+  
+
 
 @Component({
   selector: 'app-home',
@@ -58,28 +60,35 @@ parentType : PetType[]
         neutered : ['', [ Validators.requiredTrue]],
         description : ['', [Validators.required]],
         status : ['', [Validators.required]],
+        
+        skills: this.fb.array([ this.createItem() ])
 
         //email: ['', [Validators.required, Validators.email]],
         //password: ['', [Validators.required, Validators.minLength(8)]]
         });
     }
 
-skills : Skill[]
+    createItem(): FormGroup {
+        return this.fb.group({
+          name: ['', [Validators.required]],
+          level: ['', [Validators.required]],
+        });
+      }
 
-        addskills(){
-            this.entity.skills.push(<Skill>{});
-        }
+    addSkill(): void {
+        (this.petForm.get('skills') as FormArray).push(this.createItem());
+    }
 
-        removeskills(index:number){
-            this.entity.skills.splice(index, 1);
-        }
+    removeSkill(index:number){
+        (this.petForm.get('skills') as FormArray ).removeAt(index);
+    }
 
-        submit(){
-            Object.keys(this.petForm.controls).forEach(field => 
-                this.petForm.get(field).markAsTouched()       // {3}
-              );  
-          console.log(this.petForm.value)
-          console.log("entity", this.entity)
-        }
+    submit(){
+        Object.keys(this.petForm.controls).forEach(field => 
+            this.petForm.get(field).markAsTouched()       // {3}
+            );  
+        console.log(this.petForm.value)
+        console.log("entity", this.entity)
+    }
 
 }

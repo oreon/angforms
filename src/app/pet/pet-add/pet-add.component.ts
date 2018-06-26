@@ -1,6 +1,6 @@
 
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 
 import { Pet} from "../pet";
@@ -31,32 +31,48 @@ parentType : PetType[]
         this.createForm();
     }
 
+
     private createForm(): void {
-        this.petForm = this.fb.group({
-name : ['', [Validators.required]],
-price : ['', [Validators.required]],
-dob : ['', [Validators.required]],
-weight : ['', [Validators.required]],
-neutered : ['', [Validators.required]],
-description : ['', [Validators.required]],
-status : ['', [Validators.required]],
-type : ['', [Validators.required]],
-parentType : ['', [Validators.required]],
+        this.petForm= this.fb.group({
+name : ['', [  Validators.required ]],
+price : ['', [  Validators.required ]],
+dob : ['', [  Validators.required ]],
+weight : ['', [  Validators.required ]],
+neutered : ['', [  Validators.required ]],
+description : ['', [  Validators.required ]],
+status : ['', [  Validators.required ]],
+type : ['', [ ]],
+parentType : ['', [ ]],
+skills : this.fb.array([ this.createSkillsControls() ])
         //email: ['', [Validators.required, Validators.email]],
         //password: ['', [Validators.required, Validators.minLength(8)]]
         });
     }
 
-skills : Skill[]
+createSkillsControls(){
+        return this.fb.group({
+name : ['', [Validators.required]],
+level : ['', [Validators.required]],
+            //email: ['', [Validators.required, Validators.email]],
+            //password: ['', [Validators.required, Validators.minLength(8)]]
+            });
+    }
 
-        addskills(){
-            this.entity.skills.push(<Skill>{});
+addSkills(): void {
+            (this.petForm.get('skills') as FormArray).push(this.createSkillsControls());
         }
 
-        removeskills(index:number){
-            this.entity.skills.splice(index, 1);
+        removeSkills(index:number){
+            (this.petForm.get('skills') as FormArray ).removeAt(index);
         }
 
+    submit(){
+        Object.keys(this.petForm.controls).forEach(field =>
+            this.petForm.get(field).markAsTouched()
+        );
+        console.log(this.petForm.value)
+        //console.log("entity", this.entity)
+    }
 
 }
 

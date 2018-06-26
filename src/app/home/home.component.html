@@ -4,8 +4,7 @@
       <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo"/>
       <span translate>Hello world !</span>
     </h1>
-    <app-loader [isLoading]="isLoading"></app-loader>
-    <q [hidden]="isLoading">{{quote}}</q>
+    <app-loader></app-loader>
   </div>
 
   <form [formGroup]="petForm" (submit)="submit()" novalidate>
@@ -99,15 +98,19 @@
             This is required</p>
     </div>
 
-        <!-- <div class="card">
-            <button type="button" (click)="addskills()">Add skills</button>
-            <ul>
-                <li *ngFor=" let skills of entity.skills; let i = index">
-                    <app-skill-add ></app-skill-add>∏
-                    <button (click)="removeskills(i)">Remove</button>
-                </li>
-            </ul>
-        </div> -->
+    <div class="card">
+      
+      <button type="button" (click)="addSkill()">Add skills</button>
+      <div formArrayName="skills"
+        *ngFor="let item of petForm.get('skills').controls; let i = index;">
+        <div [formGroupName]="i">
+          <input formControlName="name" placeholder="Item name">
+          <input formControlName="level" placeholder="Item description">
+        </div>
+        <button (click)="removeSkill(i)">Remove</button>
+        Chosen name: {{ petForm.controls.skills.controls[i].controls.name.value }}
+      </div>
+    </div>
 
 
 <button type="submit" class="btn btn-primary">Submit</button>

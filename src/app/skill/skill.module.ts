@@ -8,6 +8,7 @@ import { SkillEditComponent } from './skill-edit/skill-edit.component';
 import { SkillRoutingModule} from './skill-routing.module';
 import { NgSelectModule,NG_SELECT_DEFAULT_CONFIG } from '@ng-select/ng-select';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule } from '@angular/http';
 
 //import { JsonSchemaFormModule }               from 'angular2-json-schema-form';
 @NgModule({
@@ -18,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgSelectModule,
     NgbModule,
     SkillRoutingModule,
+    HttpModule
   ],
   declarations: [
     SkillListComponent,

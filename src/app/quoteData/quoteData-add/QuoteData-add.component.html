@@ -1,402 +1,427 @@
+
+
 <div class="container-wrapper container d-flex justify-content-center align-items-center">
     <div class="form-wrapper text-center" style="width: 80%; background-color: #eef ; padding: 1.5em">
         <h2 class="text-center">Add/Edit QuoteData </h2>
         <form [formGroup]="quoteDataForm" (submit)="submit()" novalidate>
-
-                <div class="form-group">
-                    <label for="haveCare-input"><span translate>haveCare</span></label>
+            
+            <div class="form-group">
+                <label for="haveCare-input"><span translate>haveCare</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="haveCare">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="haveCare">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('haveCare').errors && quoteDataForm.get('haveCare').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('haveCare').errors && quoteDataForm.get('haveCare').touched">
+                    <p *ngIf="quoteDataForm.get('haveCare').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('haveCare').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="alreadyDeparted-input"><span translate>alreadyDeparted</span></label>
+
+            <div class="form-group">
+                <label for="alreadyDeparted-input"><span translate>alreadyDeparted</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="alreadyDeparted">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="alreadyDeparted">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('alreadyDeparted').errors && quoteDataForm.get('alreadyDeparted').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('alreadyDeparted').errors && quoteDataForm.get('alreadyDeparted').touched">
+                    <p *ngIf="quoteDataForm.get('alreadyDeparted').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('alreadyDeparted').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="over60-input"><span translate>over60</span></label>
+
+            <div class="form-group">
+                <label for="over60-input"><span translate>over60</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="over60">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="over60">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('over60').errors && quoteDataForm.get('over60').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('over60').errors && quoteDataForm.get('over60').touched">
+                    <p *ngIf="quoteDataForm.get('over60').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('over60').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="departure-input"><span translate>departure</span></label>
+
+            <div class="form-group">
+                <label for="departure-input"><span translate>departure</span></label>
 <div class="input-group">
-                                <input class="form-control" placeholder="yyyy-mm-dd"
-                                       formControlName="departure"  id="departure-input" ngbDatepicker #d="ngbDatepicker">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-                                        <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-                                    </button>
-                                </div>
+                            <input class="form-control" placeholder="yyyy-mm-dd"
+                                   formControlName="departure"  id="departure-input" ngbDatepicker #d="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                                    <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                </button>
                             </div>
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('departure').errors && quoteDataForm.get('departure').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                        </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('departure').errors && quoteDataForm.get('departure').touched">
+                    <p *ngIf="quoteDataForm.get('departure').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('departure').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="returnDate-input"><span translate>returnDate</span></label>
+
+            <div class="form-group">
+                <label for="returnDate-input"><span translate>returnDate</span></label>
 <div class="input-group">
-                                <input class="form-control" placeholder="yyyy-mm-dd"
-                                       formControlName="returnDate"  id="returnDate-input" ngbDatepicker #d="ngbDatepicker">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-                                        <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-                                    </button>
-                                </div>
+                            <input class="form-control" placeholder="yyyy-mm-dd"
+                                   formControlName="returnDate"  id="returnDate-input" ngbDatepicker #d="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                                    <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                </button>
                             </div>
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('returnDate').errors && quoteDataForm.get('returnDate').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                        </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('returnDate').errors && quoteDataForm.get('returnDate').touched">
+                    <p *ngIf="quoteDataForm.get('returnDate').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('returnDate').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="dobOldest-input"><span translate>dobOldest</span></label>
+
+            <div class="form-group">
+                <label for="dobOldest-input"><span translate>dobOldest</span></label>
 <div class="input-group">
-                                <input class="form-control" placeholder="yyyy-mm-dd"
-                                       formControlName="dobOldest"  id="dobOldest-input" ngbDatepicker #d="ngbDatepicker">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-                                        <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-                                    </button>
-                                </div>
+                            <input class="form-control" placeholder="yyyy-mm-dd"
+                                   formControlName="dobOldest"  id="dobOldest-input" ngbDatepicker #d="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                                    <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                </button>
                             </div>
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('dobOldest').errors && quoteDataForm.get('dobOldest').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                        </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('dobOldest').errors && quoteDataForm.get('dobOldest').touched">
+                    <p *ngIf="quoteDataForm.get('dobOldest').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('dobOldest').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="planMember-input"><span translate>planMember</span></label>
+
+            <div class="form-group">
+                <label for="planMember-input"><span translate>planMember</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="planMember">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="planMember">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('planMember').errors && quoteDataForm.get('planMember').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('planMember').errors && quoteDataForm.get('planMember').touched">
+                    <p *ngIf="quoteDataForm.get('planMember').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('planMember').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="groupNumber-input"><span translate>groupNumber</span></label>
+
+            <div class="form-group">
+                <label for="groupNumber-input"><span translate>groupNumber</span></label>
 <input type="number" class="form-control" id="groupNumber-input"
-                                   formControlName="groupNumber">
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('groupNumber').errors && quoteDataForm.get('groupNumber').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                               formControlName="groupNumber">
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('groupNumber').errors && quoteDataForm.get('groupNumber').touched">
+                    <p *ngIf="quoteDataForm.get('groupNumber').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('groupNumber').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="idNumber-input"><span translate>idNumber</span></label>
+
+            <div class="form-group">
+                <label for="idNumber-input"><span translate>idNumber</span></label>
 <input type="text" class="form-control" id="idNumber-input"
-                                   formControlName="idNumber">
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('idNumber').errors && quoteDataForm.get('idNumber').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                               formControlName="idNumber">
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('idNumber').errors && quoteDataForm.get('idNumber').touched">
+                    <p *ngIf="quoteDataForm.get('idNumber').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('idNumber').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="planType-input"><span translate>planType</span></label>
+
+            <div class="form-group">
+                <label for="planType-input"><span translate>planType</span></label>
 <ng-select formControlName="planType">
 <ng-option [value]="Single">SINGLE</ng-option>
 <ng-option [value]="Multi">MULTI</ng-option>
-                            </ng-select>
+                        </ng-select>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('planType').errors && quoteDataForm.get('planType').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('planType').errors && quoteDataForm.get('planType').touched">
+                    <p *ngIf="quoteDataForm.get('planType').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('planType').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="interestedExtra-input"><span translate>interestedExtra</span></label>
+
+            <div class="form-group">
+                <label for="interestedExtra-input"><span translate>interestedExtra</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="interestedExtra">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="interestedExtra">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('interestedExtra').errors && quoteDataForm.get('interestedExtra').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('interestedExtra').errors && quoteDataForm.get('interestedExtra').touched">
+                    <p *ngIf="quoteDataForm.get('interestedExtra').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('interestedExtra').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="initialPaymentWithinLast72-input"><span translate>initialPaymentWithinLast72</span></label>
+
+            <div class="form-group">
+                <label for="initialPaymentWithinLast72-input"><span translate>initialPaymentWithinLast72</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="initialPaymentWithinLast72">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="initialPaymentWithinLast72">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('initialPaymentWithinLast72').errors && quoteDataForm.get('initialPaymentWithinLast72').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('initialPaymentWithinLast72').errors && quoteDataForm.get('initialPaymentWithinLast72').touched">
+                    <p *ngIf="quoteDataForm.get('initialPaymentWithinLast72').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('initialPaymentWithinLast72').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="coverageLevel-input"><span translate>coverageLevel</span></label>
+
+            <div class="form-group">
+                <label for="coverageLevel-input"><span translate>coverageLevel</span></label>
 <ng-select formControlName="coverageLevel">
 <ng-option [value]="One">ONE</ng-option>
 <ng-option [value]="Two">TWO</ng-option>
 <ng-option [value]="Twothosuand_plus">TWOTHOSUAND_PLUS</ng-option>
-                            </ng-select>
+                        </ng-select>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('coverageLevel').errors && quoteDataForm.get('coverageLevel').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('coverageLevel').errors && quoteDataForm.get('coverageLevel').touched">
+                    <p *ngIf="quoteDataForm.get('coverageLevel').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('coverageLevel').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="chosenExtra-input"><span translate>chosenExtra</span></label>
+
+            <div class="form-group">
+                <label for="chosenExtra-input"><span translate>chosenExtra</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="chosenExtra">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="chosenExtra">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('chosenExtra').errors && quoteDataForm.get('chosenExtra').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('chosenExtra').errors && quoteDataForm.get('chosenExtra').touched">
+                    <p *ngIf="quoteDataForm.get('chosenExtra').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('chosenExtra').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="travellingForMedical-input"><span translate>travellingForMedical</span></label>
+
+            <div class="form-group">
+                <label for="travellingForMedical-input"><span translate>travellingForMedical</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="travellingForMedical">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="travellingForMedical">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('travellingForMedical').errors && quoteDataForm.get('travellingForMedical').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('travellingForMedical').errors && quoteDataForm.get('travellingForMedical').touched">
+                    <p *ngIf="quoteDataForm.get('travellingForMedical').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('travellingForMedical').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="travellingAgainstAdvice-input"><span translate>travellingAgainstAdvice</span></label>
+
+            <div class="form-group">
+                <label for="travellingAgainstAdvice-input"><span translate>travellingAgainstAdvice</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="travellingAgainstAdvice">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="travellingAgainstAdvice">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('travellingAgainstAdvice').errors && quoteDataForm.get('travellingAgainstAdvice').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('travellingAgainstAdvice').errors && quoteDataForm.get('travellingAgainstAdvice').touched">
+                    <p *ngIf="quoteDataForm.get('travellingAgainstAdvice').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('travellingAgainstAdvice').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="twoOrMoreStrokes-input"><span translate>twoOrMoreStrokes</span></label>
+
+            <div class="form-group">
+                <label for="twoOrMoreStrokes-input"><span translate>twoOrMoreStrokes</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="twoOrMoreStrokes">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="twoOrMoreStrokes">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('twoOrMoreStrokes').errors && quoteDataForm.get('twoOrMoreStrokes').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('twoOrMoreStrokes').errors && quoteDataForm.get('twoOrMoreStrokes').touched">
+                    <p *ngIf="quoteDataForm.get('twoOrMoreStrokes').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('twoOrMoreStrokes').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="icd-input"><span translate>icd</span></label>
+
+            <div class="form-group">
+                <label for="icd-input"><span translate>icd</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="icd">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="icd">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('icd').errors && quoteDataForm.get('icd').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('icd').errors && quoteDataForm.get('icd').touched">
+                    <p *ngIf="quoteDataForm.get('icd').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('icd').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="homeOxygen-input"><span translate>homeOxygen</span></label>
+
+            <div class="form-group">
+                <label for="homeOxygen-input"><span translate>homeOxygen</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="homeOxygen">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="homeOxygen">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('homeOxygen').errors && quoteDataForm.get('homeOxygen').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('homeOxygen').errors && quoteDataForm.get('homeOxygen').touched">
+                    <p *ngIf="quoteDataForm.get('homeOxygen').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('homeOxygen').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="terminal-input"><span translate>terminal</span></label>
+
+            <div class="form-group">
+                <label for="terminal-input"><span translate>terminal</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="terminal">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="terminal">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('terminal').errors && quoteDataForm.get('terminal').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('terminal').errors && quoteDataForm.get('terminal').touched">
+                    <p *ngIf="quoteDataForm.get('terminal').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('terminal').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="ninetyDayStable-input"><span translate>ninetyDayStable</span></label>
+
+            <div class="form-group">
+                <label for="ninetyDayStable-input"><span translate>ninetyDayStable</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                                 formControlName="ninetyDayStable">
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
-                                </label>
-                                <label ngbButtonLabel class="btn-primary">
-                                    <input ngbButton type="radio" [value]="false"> <span translate>No</span>
-                                </label>
-                            </div>
+                             formControlName="ninetyDayStable">
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                            </label>
+                            <label ngbButtonLabel class="btn-primary">
+                                <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                            </label>
+                        </div>
 
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('ninetyDayStable').errors && quoteDataForm.get('ninetyDayStable').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('ninetyDayStable').errors && quoteDataForm.get('ninetyDayStable').touched">
+                    <p *ngIf="quoteDataForm.get('ninetyDayStable').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('ninetyDayStable').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="planTotal-input"><span translate>planTotal</span></label>
+
+            <div class="form-group">
+                <label for="planTotal-input"><span translate>planTotal</span></label>
 <input type="number" class="form-control" id="planTotal-input"
-                                   formControlName="planTotal">
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('planTotal').errors && quoteDataForm.get('planTotal').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                               formControlName="planTotal">
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('planTotal').errors && quoteDataForm.get('planTotal').touched">
+                    <p *ngIf="quoteDataForm.get('planTotal').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('planTotal').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="trn-input"><span translate>trn</span></label>
+
+            <div class="form-group">
+                <label for="trn-input"><span translate>trn</span></label>
 <input type="number" class="form-control" id="trn-input"
-                                   formControlName="trn">
-                    <div class="alert alert-danger" *ngIf="quoteDataForm.get('trn').errors && quoteDataForm.get('trn').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                               formControlName="trn">
+                <div class="alert alert-danger" *ngIf="quoteDataForm.get('trn').errors && quoteDataForm.get('trn').touched">
+                    <p *ngIf="quoteDataForm.get('trn').errors.required">Required !</p>
+                    <p *ngIf="quoteDataForm.get('trn').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
+
+
 
             <button type="submit" class="btn btn-primary">Submit</button>
-
         </form>
     </div>
 </div>

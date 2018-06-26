@@ -1,6 +1,6 @@
 
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 
 import { PetType} from "../petType";
@@ -27,14 +27,24 @@ export class PetTypeAddComponent  extends BaseAdd<PetType> implements OnInit {
         this.createForm();
     }
 
+
     private createForm(): void {
-        this.petTypeForm = this.fb.group({
-name : ['', [Validators.required]],
+        this.petTypeForm= this.fb.group({
+name : ['', [  Validators.required ]],
         //email: ['', [Validators.required, Validators.email]],
         //password: ['', [Validators.required, Validators.minLength(8)]]
         });
     }
 
+
+
+    submit(){
+        Object.keys(this.petTypeForm.controls).forEach(field =>
+            this.petTypeForm.get(field).markAsTouched()
+        );
+        console.log(this.petTypeForm.value)
+        //console.log("entity", this.entity)
+    }
 
 }
 

@@ -1,31 +1,35 @@
+
+
 <div class="container-wrapper container d-flex justify-content-center align-items-center">
     <div class="form-wrapper text-center" style="width: 80%; background-color: #eef ; padding: 1.5em">
         <h2 class="text-center">Add/Edit Skill </h2>
         <form [formGroup]="skillForm" (submit)="submit()" novalidate>
-
-                <div class="form-group">
-                    <label for="name-input"><span translate>name</span></label>
+            
+            <div class="form-group">
+                <label for="name-input"><span translate>name</span></label>
 <input type="text" class="form-control" id="name-input"
-                                   formControlName="name">
-                    <div class="alert alert-danger" *ngIf="skillForm.get('name').errors && skillForm.get('name').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                               formControlName="name">
+                <div class="alert alert-danger" *ngIf="skillForm.get('name').errors && skillForm.get('name').touched">
+                    <p *ngIf="skillForm.get('name').errors.required">Required !</p>
+                    <p *ngIf="skillForm.get('name').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="level-input"><span translate>level</span></label>
+
+            <div class="form-group">
+                <label for="level-input"><span translate>level</span></label>
 <input type="number" class="form-control" id="level-input"
-                                   formControlName="level">
-                    <div class="alert alert-danger" *ngIf="skillForm.get('level').errors && skillForm.get('level').touched">
-                        <p *ngIf="petForm.get('name').errors.required">Required !</p>
-                        <p *ngIf="petForm.get('name').errors.pattern">Invalid input!</p>
-                    </div>
+                               formControlName="level">
+                <div class="alert alert-danger" *ngIf="skillForm.get('level').errors && skillForm.get('level').touched">
+                    <p *ngIf="skillForm.get('level').errors.required">Required !</p>
+                    <p *ngIf="skillForm.get('level').errors.pattern">Invalid input!</p>
                 </div>
+            </div>
+
+
 
             <button type="submit" class="btn btn-primary">Submit</button>
-
         </form>
     </div>
 </div>
