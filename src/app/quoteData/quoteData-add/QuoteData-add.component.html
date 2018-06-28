@@ -1,5 +1,6 @@
 
 
+
 <div class="container-wrapper container d-flex justify-content-center align-items-center">
     <div class="form-wrapper text-center" style="width: 80%; background-color: #eef ; padding: 1.5em">
         <h2 class="text-center">Add/Edit QuoteData </h2>
@@ -8,7 +9,8 @@
             <div class="form-group">
                 <label for="haveCare-input"><span translate>haveCare</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="haveCare">
+                                    formControlName="haveCare"  id="haveCare-input"  [(ngModel)]="entity.haveCare"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -28,7 +30,8 @@
             <div class="form-group">
                 <label for="alreadyDeparted-input"><span translate>alreadyDeparted</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="alreadyDeparted">
+                                    formControlName="alreadyDeparted"  id="alreadyDeparted-input"  [(ngModel)]="entity.alreadyDeparted"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -48,7 +51,8 @@
             <div class="form-group">
                 <label for="over60-input"><span translate>over60</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="over60">
+                                    formControlName="over60"  id="over60-input"  [(ngModel)]="entity.over60"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -68,10 +72,11 @@
             <div class="form-group">
                 <label for="departure-input"><span translate>departure</span></label>
 <div class="input-group">
-                            <input class="form-control" placeholder="yyyy-mm-dd"
-                                   formControlName="departure"  id="departure-input" ngbDatepicker #d="ngbDatepicker">
+                            <input class="form-control" placeholder="yyyy-mm-dd"     formControlName="departure"  id="departure-input"  [(ngModel)]="entity.departure"
+
+                                     ngbDatepicker #d_departure="ngbDatepicker">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                                <button class="btn btn-outline-secondary" (click)="d_departure.toggle()" type="button">
                                     <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
                                 </button>
                             </div>
@@ -87,10 +92,11 @@
             <div class="form-group">
                 <label for="returnDate-input"><span translate>returnDate</span></label>
 <div class="input-group">
-                            <input class="form-control" placeholder="yyyy-mm-dd"
-                                   formControlName="returnDate"  id="returnDate-input" ngbDatepicker #d="ngbDatepicker">
+                            <input class="form-control" placeholder="yyyy-mm-dd"     formControlName="returnDate"  id="returnDate-input"  [(ngModel)]="entity.returnDate"
+
+                                     ngbDatepicker #d_returnDate="ngbDatepicker">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                                <button class="btn btn-outline-secondary" (click)="d_returnDate.toggle()" type="button">
                                     <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
                                 </button>
                             </div>
@@ -106,10 +112,11 @@
             <div class="form-group">
                 <label for="dobOldest-input"><span translate>dobOldest</span></label>
 <div class="input-group">
-                            <input class="form-control" placeholder="yyyy-mm-dd"
-                                   formControlName="dobOldest"  id="dobOldest-input" ngbDatepicker #d="ngbDatepicker">
+                            <input class="form-control" placeholder="yyyy-mm-dd"     formControlName="dobOldest"  id="dobOldest-input"  [(ngModel)]="entity.dobOldest"
+
+                                     ngbDatepicker #d_dobOldest="ngbDatepicker">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                                <button class="btn btn-outline-secondary" (click)="d_dobOldest.toggle()" type="button">
                                     <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
                                 </button>
                             </div>
@@ -125,7 +132,8 @@
             <div class="form-group">
                 <label for="planMember-input"><span translate>planMember</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="planMember">
+                                    formControlName="planMember"  id="planMember-input"  [(ngModel)]="entity.planMember"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -144,8 +152,8 @@
 
             <div class="form-group">
                 <label for="groupNumber-input"><span translate>groupNumber</span></label>
-<input type="number" class="form-control" id="groupNumber-input"
-                               formControlName="groupNumber">
+<input type="number" class="form-control"     formControlName="groupNumber"  id="groupNumber-input"  [(ngModel)]="entity.groupNumber"
+>
                 <div class="alert alert-danger" *ngIf="quoteDataForm.get('groupNumber').errors && quoteDataForm.get('groupNumber').touched">
                     <p *ngIf="quoteDataForm.get('groupNumber').errors.required">Required !</p>
                     <p *ngIf="quoteDataForm.get('groupNumber').errors.pattern">Invalid input!</p>
@@ -156,8 +164,8 @@
 
             <div class="form-group">
                 <label for="idNumber-input"><span translate>idNumber</span></label>
-<input type="text" class="form-control" id="idNumber-input"
-                               formControlName="idNumber">
+<input type="text" class="form-control"     formControlName="idNumber"  id="idNumber-input"  [(ngModel)]="entity.idNumber"
+>
                 <div class="alert alert-danger" *ngIf="quoteDataForm.get('idNumber').errors && quoteDataForm.get('idNumber').touched">
                     <p *ngIf="quoteDataForm.get('idNumber').errors.required">Required !</p>
                     <p *ngIf="quoteDataForm.get('idNumber').errors.pattern">Invalid input!</p>
@@ -168,9 +176,10 @@
 
             <div class="form-group">
                 <label for="planType-input"><span translate>planType</span></label>
-<ng-select formControlName="planType">
-<ng-option [value]="Single">SINGLE</ng-option>
-<ng-option [value]="Multi">MULTI</ng-option>
+<ng-select     formControlName="planType"  id="planType-input"  [(ngModel)]="entity.planType"
+>
+<ng-option value="Single">SINGLE</ng-option>
+<ng-option value="Multi">MULTI</ng-option>
                         </ng-select>
 
                 <div class="alert alert-danger" *ngIf="quoteDataForm.get('planType').errors && quoteDataForm.get('planType').touched">
@@ -184,7 +193,8 @@
             <div class="form-group">
                 <label for="interestedExtra-input"><span translate>interestedExtra</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="interestedExtra">
+                                    formControlName="interestedExtra"  id="interestedExtra-input"  [(ngModel)]="entity.interestedExtra"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -204,7 +214,8 @@
             <div class="form-group">
                 <label for="initialPaymentWithinLast72-input"><span translate>initialPaymentWithinLast72</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="initialPaymentWithinLast72">
+                                    formControlName="initialPaymentWithinLast72"  id="initialPaymentWithinLast72-input"  [(ngModel)]="entity.initialPaymentWithinLast72"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -223,10 +234,11 @@
 
             <div class="form-group">
                 <label for="coverageLevel-input"><span translate>coverageLevel</span></label>
-<ng-select formControlName="coverageLevel">
-<ng-option [value]="One">ONE</ng-option>
-<ng-option [value]="Two">TWO</ng-option>
-<ng-option [value]="Twothosuand_plus">TWOTHOSUAND_PLUS</ng-option>
+<ng-select     formControlName="coverageLevel"  id="coverageLevel-input"  [(ngModel)]="entity.coverageLevel"
+>
+<ng-option value="One">ONE</ng-option>
+<ng-option value="Two">TWO</ng-option>
+<ng-option value="Twothosuand_plus">TWOTHOSUAND_PLUS</ng-option>
                         </ng-select>
 
                 <div class="alert alert-danger" *ngIf="quoteDataForm.get('coverageLevel').errors && quoteDataForm.get('coverageLevel').touched">
@@ -240,7 +252,8 @@
             <div class="form-group">
                 <label for="chosenExtra-input"><span translate>chosenExtra</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="chosenExtra">
+                                    formControlName="chosenExtra"  id="chosenExtra-input"  [(ngModel)]="entity.chosenExtra"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -260,7 +273,8 @@
             <div class="form-group">
                 <label for="travellingForMedical-input"><span translate>travellingForMedical</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="travellingForMedical">
+                                    formControlName="travellingForMedical"  id="travellingForMedical-input"  [(ngModel)]="entity.travellingForMedical"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -280,7 +294,8 @@
             <div class="form-group">
                 <label for="travellingAgainstAdvice-input"><span translate>travellingAgainstAdvice</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="travellingAgainstAdvice">
+                                    formControlName="travellingAgainstAdvice"  id="travellingAgainstAdvice-input"  [(ngModel)]="entity.travellingAgainstAdvice"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -300,7 +315,8 @@
             <div class="form-group">
                 <label for="twoOrMoreStrokes-input"><span translate>twoOrMoreStrokes</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="twoOrMoreStrokes">
+                                    formControlName="twoOrMoreStrokes"  id="twoOrMoreStrokes-input"  [(ngModel)]="entity.twoOrMoreStrokes"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -320,7 +336,8 @@
             <div class="form-group">
                 <label for="icd-input"><span translate>icd</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="icd">
+                                    formControlName="icd"  id="icd-input"  [(ngModel)]="entity.icd"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -340,7 +357,8 @@
             <div class="form-group">
                 <label for="homeOxygen-input"><span translate>homeOxygen</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="homeOxygen">
+                                    formControlName="homeOxygen"  id="homeOxygen-input"  [(ngModel)]="entity.homeOxygen"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -360,7 +378,8 @@
             <div class="form-group">
                 <label for="terminal-input"><span translate>terminal</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="terminal">
+                                    formControlName="terminal"  id="terminal-input"  [(ngModel)]="entity.terminal"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -380,7 +399,8 @@
             <div class="form-group">
                 <label for="ninetyDayStable-input"><span translate>ninetyDayStable</span></label>
 <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
-                             formControlName="ninetyDayStable">
+                                    formControlName="ninetyDayStable"  id="ninetyDayStable-input"  [(ngModel)]="entity.ninetyDayStable"
+>
                             <label ngbButtonLabel class="btn-primary">
                                 <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
                             </label>
@@ -399,8 +419,8 @@
 
             <div class="form-group">
                 <label for="planTotal-input"><span translate>planTotal</span></label>
-<input type="number" class="form-control" id="planTotal-input"
-                               formControlName="planTotal">
+<input type="number" class="form-control"     formControlName="planTotal"  id="planTotal-input"  [(ngModel)]="entity.planTotal"
+>
                 <div class="alert alert-danger" *ngIf="quoteDataForm.get('planTotal').errors && quoteDataForm.get('planTotal').touched">
                     <p *ngIf="quoteDataForm.get('planTotal').errors.required">Required !</p>
                     <p *ngIf="quoteDataForm.get('planTotal').errors.pattern">Invalid input!</p>
@@ -411,13 +431,51 @@
 
             <div class="form-group">
                 <label for="trn-input"><span translate>trn</span></label>
-<input type="number" class="form-control" id="trn-input"
-                               formControlName="trn">
+<input type="number" class="form-control"     formControlName="trn"  id="trn-input"  [(ngModel)]="entity.trn"
+>
                 <div class="alert alert-danger" *ngIf="quoteDataForm.get('trn').errors && quoteDataForm.get('trn').touched">
                     <p *ngIf="quoteDataForm.get('trn').errors.required">Required !</p>
                     <p *ngIf="quoteDataForm.get('trn').errors.pattern">Invalid input!</p>
                 </div>
             </div>
+
+
+            <div class="card card-block">
+                <h4 class="card-title">Traveler</h4>
+                <button type="button" (click)="addTraveler()">Add Traveler</button>
+                <div formArrayName="traveler"
+                     *ngFor="let item of quoteDataForm.get('traveler').controls; let i = index;">
+                    <div [formGroupName]="i">
+                        
+            <div class="form-group">
+                <label for="firstName-input"><span translate>firstName</span></label>
+<input type="text" class="form-control"     formControlName="firstName"  id="firstName-input"  [(ngModel)]="entity.firstName"
+>
+                <div class="alert alert-danger" *ngIf="item.get('firstName').errors && item.get('firstName').touched">
+                    <p *ngIf="item.get('firstName').errors.required">Required !</p>
+                    <p *ngIf="item.get('firstName').errors.pattern">Invalid input!</p>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="lastName-input"><span translate>lastName</span></label>
+<input type="text" class="form-control"     formControlName="lastName"  id="lastName-input"  [(ngModel)]="entity.lastName"
+>
+                <div class="alert alert-danger" *ngIf="item.get('lastName').errors && item.get('lastName').touched">
+                    <p *ngIf="item.get('lastName').errors.required">Required !</p>
+                    <p *ngIf="item.get('lastName').errors.pattern">Invalid input!</p>
+                </div>
+            </div>
+
+
+
+                    </div>
+                    <button (click)="removeTraveler(i)">Remove</button>
+                </div>
+            </div>
+
 
 
 

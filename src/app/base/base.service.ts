@@ -14,7 +14,7 @@ export abstract class BaseService<T extends BaseEntity> {
   entity_url :string;
 
   constructor(protected _http: Http, public url:string) {
-    this.entity_url =   environment.REST_API_URL + url;
+    this.entity_url =   environment.REST_API_URL + '/api/' + url;
   }
 
   getRecords(): Observable<T[]> {

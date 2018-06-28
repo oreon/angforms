@@ -9,7 +9,7 @@ import { QuoteDataEditComponent} from './quoteData-edit/quoteData-edit.component
 const quoteDataRoutes: Routes = [
   {path: 'quoteDatas', component: QuoteDataListComponent},
   {path: 'quoteDatas/add', component: QuoteDataAddComponent},
-  {path: 'quoteDatas/:id/edit', component: QuoteDataEditComponent}
+  {path: 'quoteDatas/:id/edit', component: QuoteDataAddComponent}
 ];
 
 @NgModule({

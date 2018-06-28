@@ -5,7 +5,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 import { QuoteData} from "../quoteData";
 import { QuoteDataService} from "../quoteData.service";
-import { BaseAdd } from '../../base/base-add';
+import { BaseEditComponent } from '@app/base/base-edit.component';
+
+import {Traveler} from "@app/traveler/traveler";
 
 
 
@@ -15,22 +17,23 @@ selector: 'app-quoteData-add',
 templateUrl: './quoteData-add.component.html',
 styleUrls: ['./quoteData-add.component.css']
 })
-export class QuoteDataAddComponent  extends BaseAdd<QuoteData> implements OnInit {
+export class QuoteDataAddComponent  extends BaseEditComponent<QuoteData> implements OnInit {
 
     quoteData: QuoteData;
     errorMessage: string;
     public quoteDataForm: FormGroup;
 
 
-    constructor(protected quoteDataService: QuoteDataService, protected router: Router, private fb: FormBuilder) {
-        super(quoteDataService, router, 'quoteDatas')
+
+    constructor(protected quoteDataService: QuoteDataService, protected route:ActivatedRoute, protected router: Router, private fb: FormBuilder) {
+        super(quoteDataService, route, router, 'quoteDatas')
         this.createForm();
     }
 
 
     private createForm(): void {
         this.quoteDataForm= this.fb.group({
-haveCare : ['', [  Validators.required ]],
+        haveCare : ['', [  Validators.required ]],
 alreadyDeparted : ['', [  Validators.required ]],
 over60 : ['', [  Validators.required ]],
 departure : ['', [  Validators.required ]],
@@ -53,12 +56,26 @@ terminal : ['', [  Validators.required ]],
 ninetyDayStable : ['', [  Validators.required ]],
 planTotal : ['', [  Validators.required ]],
 trn : ['', [  Validators.required ]],
-        //email: ['', [Validators.required, Validators.email]],
-        //password: ['', [Validators.required, Validators.minLength(8)]]
+traveler : this.fb.array([ this.createTravelerControls() ])
+
         });
     }
 
+createTravelerControls(){
+        return this.fb.group({
+        firstName : ['', [  Validators.required ]],
+lastName : ['', [  Validators.required ]],
 
+            });
+    }
+
+addTraveler(): void {
+            (this.quoteDataForm.get('traveler') as FormArray).push(this.createTravelerControls());
+        }
+
+        removeTraveler(index:number){
+            (this.quoteDataForm.get('traveler') as FormArray ).removeAt(index);
+        }
 
     submit(){
         Object.keys(this.quoteDataForm.controls).forEach(field =>
@@ -66,6 +83,7 @@ trn : ['', [  Validators.required ]],
         );
         console.log(this.quoteDataForm.value)
         //console.log("entity", this.entity)
+        super.onSubmit(this.entity);
     }
 
 }

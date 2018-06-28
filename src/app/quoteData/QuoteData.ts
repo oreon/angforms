@@ -1,5 +1,6 @@
 import { BaseEntity } from "../base/base";
 
+import {Traveler} from "@app/traveler/traveler";
 
 
 
@@ -31,5 +32,6 @@ terminal : boolean
 ninetyDayStable : boolean
 planTotal : number
 trn : number
+traveler : Traveler   []  ;
 }
 

@@ -1,4 +1,57 @@
 {
+    //travelquote
+"Traveler_firstName": "FR-First name",
+
+"Traveler_lastName": "FR-Last name",
+
+"QuoteData_haveCare": "FR-Have care",
+
+"QuoteData_alreadyDeparted": "FR-Already departed",
+
+"QuoteData_over60": "FR-Over60",
+
+"QuoteData_departure": "FR-Departure",
+
+"QuoteData_returnDate": "FR-Return date",
+
+"QuoteData_dobOldest": "FR-Dob oldest",
+
+"QuoteData_planMember": "FR-Plan member",
+
+"QuoteData_groupNumber": "FR-Group number",
+
+"QuoteData_idNumber": "FR-Id number",
+
+"QuoteData_planType": "FR-Plan type",
+
+"QuoteData_interestedExtra": "FR-Interested extra",
+
+"QuoteData_initialPaymentWithinLast72": "FR-Initial payment within last72",
+
+"QuoteData_coverageLevel": "FR-Coverage level",
+
+"QuoteData_chosenExtra": "FR-Chosen extra",
+
+"QuoteData_travellingForMedical": "FR-Travelling for medical",
+
+"QuoteData_travellingAgainstAdvice": "FR-Travelling against advice",
+
+"QuoteData_twoOrMoreStrokes": "FR-Two or more strokes",
+
+"QuoteData_icd": "FR-Icd",
+
+"QuoteData_homeOxygen": "FR-Home oxygen",
+
+"QuoteData_terminal": "FR-Terminal",
+
+"QuoteData_ninetyDayStable": "FR-Ninety day stable",
+
+"QuoteData_planTotal": "FR-Plan total",
+
+"QuoteData_trn": "FR-Trn",
+
+"QuoteData_traveler": "FR-Traveler",
+
 
 
 }

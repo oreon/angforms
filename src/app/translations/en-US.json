@@ -1,25 +1,9 @@
 
 {
-    //pets
-"Pet_name": "Name",
+    //travelquote
+"Traveler_firstName": "First name",
 
-"Pet_price": "Price",
-
-"Pet_type": "Type",
-
-"Pet_parentType": "Parent type",
-
-"Pet_dob": "Dob",
-
-"Pet_weight": "Weight",
-
-"Pet_neutered": "Neutered",
-
-"Pet_description": "Description",
-
-"Pet_status": "Status",
-
-"Pet_skills": "Skills",
+"Traveler_lastName": "Last name",
 
 "QuoteData_haveCare": "Have care",
 
@@ -67,11 +51,9 @@
 
 "QuoteData_trn": "Trn",
 
-"Skill_name": "Name",
+"QuoteData_traveler": "Traveler",
 
-"Skill_level": "Level",
 
-"PetType_name": "Name",
 
 }
 

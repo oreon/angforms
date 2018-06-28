@@ -1,0 +1,36 @@
+
+
+
+<div class="container-wrapper container d-flex justify-content-center align-items-center">
+    <div class="form-wrapper text-center" style="width: 80%; background-color: #eef ; padding: 1.5em">
+        <h2 class="text-center">Add/Edit Traveler </h2>
+        <form [formGroup]="travelerForm" (submit)="submit()" novalidate>
+            
+            <div class="form-group">
+                <label for="firstName-input"><span translate>firstName</span></label>
+<input type="text" class="form-control"     formControlName="firstName"  id="firstName-input"  [(ngModel)]="entity.firstName"
+>
+                <div class="alert alert-danger" *ngIf="travelerForm.get('firstName').errors && travelerForm.get('firstName').touched">
+                    <p *ngIf="travelerForm.get('firstName').errors.required">Required !</p>
+                    <p *ngIf="travelerForm.get('firstName').errors.pattern">Invalid input!</p>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="lastName-input"><span translate>lastName</span></label>
+<input type="text" class="form-control"     formControlName="lastName"  id="lastName-input"  [(ngModel)]="entity.lastName"
+>
+                <div class="alert alert-danger" *ngIf="travelerForm.get('lastName').errors && travelerForm.get('lastName').touched">
+                    <p *ngIf="travelerForm.get('lastName').errors.required">Required !</p>
+                    <p *ngIf="travelerForm.get('lastName').errors.pattern">Invalid input!</p>
+                </div>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

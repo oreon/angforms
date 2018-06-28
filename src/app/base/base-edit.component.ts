@@ -12,6 +12,7 @@ export abstract class BaseEditComponent<T extends BaseEntity>   implements OnIni
 
   entity:T
   errorMessage: string;
+  id:any
 
   public compareFn(e1: BaseEntity, e2: BaseEntity) {
     return e1 && e2 ? e1.id === e2.id : e1 === e2;
@@ -40,11 +41,13 @@ export abstract class BaseEditComponent<T extends BaseEntity>   implements OnIni
   }
 
   ngOnInit() {
-    const id = this.route.snapshot.params['id'];
-    console.log(id)
-    this.service.getById(id).subscribe(
-      u => this.entity = u,
-      error => this.errorMessage = <any>error);
+    this.id = this.route.snapshot.params['id'];
+    console.log(this.id)
+    if(this.id){
+      this.service.getById(this.id).subscribe(
+        u => this.entity = u,
+        error => this.errorMessage = <any>error);
+    }
   }
 
   getEntity(){
@@ -55,6 +58,17 @@ export abstract class BaseEditComponent<T extends BaseEntity>   implements OnIni
     let that = this;
     const id = this.route.snapshot.params['id']
     console.log(entity)
+
+    if(!this.id){
+        this.service.add(entity).subscribe(
+          new_user => {
+          this.onBack()
+          },
+          error => this.errorMessage = <any>error
+    );
+    return
+  }
+
     this.service.update(id.toString(), this.getEntity() ).subscribe(
       get_result,
       error => {

@@ -22,6 +22,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { PetService } from '@app/pet/pet.service';
 import { PetTypeService } from '@app/petType/petType.service';
 import { SkillService } from '@app/skill/skill.service';
+import { QuoteDataModule } from '@app/quoteData/quoteData.module';
 
 // import 'rxjs/add/operator/map';
 // import 'rxjs/add/operator/toPromise';
@@ -40,8 +41,8 @@ import { SkillService } from '@app/skill/skill.service';
     HomeModule,
     AboutModule,
     LoginModule,
-    PetModule,
-    PetTypeModule,
+
+    QuoteDataModule,
     SkillModule,
     AppRoutingModule,
     NgSelectModule,
@@ -56,9 +57,7 @@ import { SkillService } from '@app/skill/skill.service';
   ],
   declarations: [AppComponent],
   providers: [
-    PetService,
-    PetTypeService,
-    SkillService,
+  
   ],
   bootstrap: [AppComponent]
 })
