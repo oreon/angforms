@@ -34,6 +34,9 @@ export class TravelerAddComponent  extends BaseEditComponent<Traveler> implement
         this.travelerForm= this.fb.group({
         firstName : ['', [  Validators.required ]],
 lastName : ['', [  Validators.required ]],
+gender : ['', [  Validators.required ]],
+dob : ['', [  Validators.required ]],
+relationship : ['', [  Validators.required ]],
 
         });
     }

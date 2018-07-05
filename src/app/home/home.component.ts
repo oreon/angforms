@@ -6,11 +6,10 @@ import { QuoteService } from './quote.service';
 import {Component,  OnInit, Output} from '@angular/core';
 import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
+import { Traveler } from '@app/traveler/traveler';
 
 
-import {PetType} from "@app/petType/petType";
-import {Skill} from "@app/skill/skill";
-import { Pet } from '@app/pet/pet';
+
   
 
 
@@ -34,18 +33,14 @@ export class HomeComponent implements OnInit {
   // }
 
   ngOnInit() { }
+    entity:any
+    petForm:FormGroup
 
-  entity: Pet;
-    errorMessage: string;
-    public petForm: FormGroup;
-
-type : PetType[]
-parentType : PetType[]
 
     constructor( protected router: Router, private fb: FormBuilder) {
         //super(petService, router, 'pets')
         this.createForm();
-        this.entity = <Pet>{};
+        this.entity = <Traveler>{};
         console.log(this.entity)
         this.entity.skills = []
     }

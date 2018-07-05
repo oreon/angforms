@@ -4,7 +4,7 @@
         <button class="btn btn-primary float-right" (click)="showAdd()">
             <span class="fa fa-plus"></span>
             <span  translate>
-            Create new
+            Create
             </span>
         </button>
     </h2>
@@ -17,6 +17,9 @@
             <tr>
 <th><span translate>firstName</span> <span class="fa fa-sort"></span></th>
 <th><span translate>lastName</span> <span class="fa fa-sort"></span></th>
+<th><span translate>gender</span> <span class="fa fa-sort"></span></th>
+<th><span translate>dob</span> <span class="fa fa-sort"></span></th>
+<th><span translate>relationship</span> <span class="fa fa-sort"></span></th>
                 <th></th>
             </tr>
             </thead>
@@ -27,9 +30,17 @@
                 -->
 <td> {{e.firstName}}</td>
 <td> {{e.lastName}}</td>
+<td> {{e.gender}}</td>
+<td> {{e.dob}}</td>
+<td> {{e.relationship}}</td>
                 <td class="text-right">
-                    <button class="btn btn-default" (click)="showEdit(e)">Edit</button>
-                    <button class="btn btn-default" (click)="delete(e)">Delete</button>
+                    <button class="btn btn-default" (click)="showEdit(e)">
+                        <span class="fa fa-pencil"></span>
+                        https://fontawesome.com/v4.7.0/icon/pencil
+                    </button>
+                    <button class="btn btn-default" (click)="delete(e)">
+                        <span class="fa fa-delete"></span>
+                    </button>
                     <!--
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

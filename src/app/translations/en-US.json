@@ -1,57 +1,43 @@
 
 {
-    //travelquote
-"Traveler_firstName": "First name",
+    //SingleTravelWizard
+"Trip_haveCare": "Have care",
 
-"Traveler_lastName": "Last name",
+"Trip_alreadyDeparted": "Already departed",
 
-"QuoteData_haveCare": "Have care",
+"Trip_over60": "Over60",
 
-"QuoteData_alreadyDeparted": "Already departed",
+"Trip_departure": "Departure",
 
-"QuoteData_over60": "Over60",
+"Trip_returnDate": "Return date",
 
-"QuoteData_departure": "Departure",
+"Options_dobOldest": "Dob oldest",
 
-"QuoteData_returnDate": "Return date",
+"Options_planMember": "Plan member",
 
-"QuoteData_dobOldest": "Dob oldest",
+"Options_groupNumber": "Group number",
 
-"QuoteData_planMember": "Plan member",
+"Options_idNumber": "Id number",
 
-"QuoteData_groupNumber": "Group number",
+"Options_planType": "Plan type",
 
-"QuoteData_idNumber": "Id number",
+"Options_interestedExtra": "Interested extra",
 
-"QuoteData_planType": "Plan type",
+"Medical_travellingForMedical": "Travelling for medical",
 
-"QuoteData_interestedExtra": "Interested extra",
+"Medical_travellingAgainstAdvice": "Travelling against advice",
 
-"QuoteData_initialPaymentWithinLast72": "Initial payment within last72",
+"Medical_twoOrMoreStrokes": "Two or more strokes",
 
-"QuoteData_coverageLevel": "Coverage level",
+"Medical_icd": "Icd",
 
-"QuoteData_chosenExtra": "Chosen extra",
+"Medical_homeOxygen": "Home oxygen",
 
-"QuoteData_travellingForMedical": "Travelling for medical",
+"Medical_terminal": "Terminal",
 
-"QuoteData_travellingAgainstAdvice": "Travelling against advice",
+"Medical_ninetyDayStable": "Ninety day stable",
 
-"QuoteData_twoOrMoreStrokes": "Two or more strokes",
-
-"QuoteData_icd": "Icd",
-
-"QuoteData_homeOxygen": "Home oxygen",
-
-"QuoteData_terminal": "Terminal",
-
-"QuoteData_ninetyDayStable": "Ninety day stable",
-
-"QuoteData_planTotal": "Plan total",
-
-"QuoteData_trn": "Trn",
-
-"QuoteData_traveler": "Traveler",
+"Travelers_traveler": "Traveler",
 
 
 

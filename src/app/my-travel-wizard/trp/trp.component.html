@@ -1,0 +1,8 @@
+<div class="form-wrapper text-center" >
+    <h2 class="text-center">Trip </h2>
+    <form [formGroup]="tripForm" (submit)="submit()" novalidate>
+        <input formControlName="email" placeholder="email">
+        <input formControlName="mobile" placeholder="mobile">
+      <button type="submit" class="btn btn-primary">Next</button>
+    </form>
+</div>

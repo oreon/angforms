@@ -1,0 +1,18 @@
+<div class="container-fluid px-0">
+  <h3> Main Wizard</h3>
+  <div class="row">
+    <div class="col-lg-5" [hidden]="showFinal()">
+      <app-navigator  [currentInd]="currentInd"></app-navigator>
+    </div>
+
+    <div class="col-lg-7">
+      <app-trp  [hidden]="!showMe(0)"  (stepComplete)="onNext($event)"></app-trp>
+      <app-opt  [hidden]="!showMe(1)"  (stepComplete)="onNext($event)"></app-opt>
+      <app-med  [hidden]="!showMe(2)"   (stepComplete)="onNext($event)"></app-med>
+    </div>
+
+    <final-message [hidden]="!showFinal()"></final-message>  
+    
+  </div>
+
+</div>

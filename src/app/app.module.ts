@@ -15,14 +15,13 @@ import { AboutModule } from './about/about.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { PetModule } from '@app/pet/pet.module';
-import { PetTypeModule } from '@app/petType/petType.module';
-import { SkillModule } from '@app/skill/skill.module';
+
 import { NgSelectModule } from '@ng-select/ng-select';
-import { PetService } from '@app/pet/pet.service';
-import { PetTypeService } from '@app/petType/petType.service';
-import { SkillService } from '@app/skill/skill.service';
+
 import { QuoteDataModule } from '@app/quoteData/quoteData.module';
+import { TrpComponent } from './my-travel-wizard/trp/trp.component';
+import { OptComponent } from './my-travel-wizard/opt/opt.component';
+import { MedComponent } from './my-travel-wizard/med/med.component';
 
 // import 'rxjs/add/operator/map';
 // import 'rxjs/add/operator/toPromise';
@@ -43,7 +42,7 @@ import { QuoteDataModule } from '@app/quoteData/quoteData.module';
     LoginModule,
 
     QuoteDataModule,
-    SkillModule,
+    
     AppRoutingModule,
     NgSelectModule,
   ],
@@ -52,7 +51,7 @@ import { QuoteDataModule } from '@app/quoteData/quoteData.module';
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
-    SkillModule,
+    
     HttpClientModule
   ],
   declarations: [AppComponent],

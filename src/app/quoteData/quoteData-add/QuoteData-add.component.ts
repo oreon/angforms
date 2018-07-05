@@ -65,6 +65,9 @@ createTravelerControls(){
         return this.fb.group({
         firstName : ['', [  Validators.required ]],
 lastName : ['', [  Validators.required ]],
+gender : ['', [  Validators.required ]],
+dob : ['', [  Validators.required ]],
+relationship : ['', [  Validators.required ]],
 
             });
     }

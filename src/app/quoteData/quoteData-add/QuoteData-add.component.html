@@ -471,6 +471,59 @@
 
 
 
+            <div class="form-group">
+                <label for="gender-input"><span translate>gender</span></label>
+<ng-select     formControlName="gender"  id="gender-input"  [(ngModel)]="entity.gender"
+>
+<ng-option value="Male">MALE</ng-option>
+<ng-option value="Female">FEMALE</ng-option>
+<ng-option value="Transgender">TRANSGENDER</ng-option>
+                        </ng-select>
+
+                <div class="alert alert-danger" *ngIf="item.get('gender').errors && item.get('gender').touched">
+                    <p *ngIf="item.get('gender').errors.required">Required !</p>
+                    <p *ngIf="item.get('gender').errors.pattern">Invalid input!</p>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="dob-input"><span translate>dob</span></label>
+<div class="input-group">
+                            <input class="form-control" placeholder="yyyy-mm-dd"     formControlName="dob"  id="dob-input"  [(ngModel)]="entity.dob"
+
+                                     ngbDatepicker #d_dob="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" (click)="d_dob.toggle()" type="button">
+                                    <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                </button>
+                            </div>
+                        </div>
+                <div class="alert alert-danger" *ngIf="item.get('dob').errors && item.get('dob').touched">
+                    <p *ngIf="item.get('dob').errors.required">Required !</p>
+                    <p *ngIf="item.get('dob').errors.pattern">Invalid input!</p>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="relationship-input"><span translate>relationship</span></label>
+<ng-select     formControlName="relationship"  id="relationship-input"  [(ngModel)]="entity.relationship"
+>
+<ng-option value="Spouse">SPOUSE</ng-option>
+<ng-option value="Dependant">DEPENDANT</ng-option>
+                        </ng-select>
+
+                <div class="alert alert-danger" *ngIf="item.get('relationship').errors && item.get('relationship').touched">
+                    <p *ngIf="item.get('relationship').errors.required">Required !</p>
+                    <p *ngIf="item.get('relationship').errors.pattern">Invalid input!</p>
+                </div>
+            </div>
+
+
+
                     </div>
                     <button (click)="removeTraveler(i)">Remove</button>
                 </div>
