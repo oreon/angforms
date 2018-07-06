@@ -1,7 +1,7 @@
 <div class="container-fluid px-0">
   <h3> Main Wizard</h3>
   <div class="row">
-    <div class="col-lg-5" [hidden]="showFinal()">
+    <div class="col-lg-5" [hidden]="wizardDone()">
       <app-navigator  [currentInd]="currentInd" [steps]="steps"></app-navigator>
     </div>
 
@@ -11,7 +11,7 @@
       <app-med  [hidden]="!showMe(2)"   (stepComplete)="onNext($event)"></app-med>
     </div>
 
-    <final-message [hidden]="!showFinal()" [entity]="entity"></final-message>  
+    <final-message [hidden]="!wizardDone()" [entity]="entity"></final-message>  
     
   </div>
 

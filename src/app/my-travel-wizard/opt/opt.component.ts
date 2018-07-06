@@ -21,8 +21,8 @@ export class OptComponent extends BaseWizardStep<Options> implements OnInit  {
   errorMessage: string;
   public tripForm: FormGroup;
 
-  constructor(protected fb: FormBuilder, protected wizardService: WizardService){ 
-    super(fb, wizardService); 
+  constructor(protected fb: FormBuilder){ 
+    super(fb); 
    }
 
   getForm():FormGroup{

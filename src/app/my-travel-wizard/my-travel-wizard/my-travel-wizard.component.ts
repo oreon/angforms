@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
 import { MyCustomer } from '@app/my-travel-wizard/wizard.service';
 import * as _ from "lodash";
+import { BaseWizardComponenet } from '@app/base/base-wisard';
+
 
 @Component({
   selector: 'app-my-travel-wizard',
   templateUrl: './my-travel-wizard.component.html',
   styleUrls: ['./my-travel-wizard.component.scss']
 })
-export class MyTravelWizardComponent implements OnInit {
+export class MyTravelWizardComponent extends BaseWizardComponenet implements OnInit {
 
-  currentInd = 0;
-  constructor() { }
-  entity:MyCustomer =<MyCustomer>{}
+  constructor() { super(); }
+
+  getSteps(){
+    return this.steps;
+  }
 
   steps = [
     { name: 'trip',
@@ -26,22 +30,6 @@ export class MyTravelWizardComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  public showMe(ind: number): boolean {
-    return ind === this.currentInd;
-  }
-
-  onNext(msg:any):void{
-    this.currentInd++; // = this.current + 1;
-    _.assign(this.entity, msg);
-    console.log(this.entity);
-  }
-
-  showFinal():boolean{
-    return this.currentInd >= 3;
-  }
-
-
 }
 
 

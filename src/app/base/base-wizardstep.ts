@@ -4,22 +4,18 @@ import { WizardService } from "@app/my-travel-wizard/wizard.service";
 
 export abstract class BaseWizardStep<T>{
 
-    
     entity:T 
 
-    @Output() stepComplete = new EventEmitter<any>();
+    @Output() stepComplete = new EventEmitter<T>();
 
     abstract getForm():FormGroup
     abstract createForm():void;
 
-   // abstract createForm():void
-
-    constructor(protected fb: FormBuilder, protected wizardService: WizardService){
+    constructor(protected fb: FormBuilder){
         this.entity = <T>{};
         this.createForm();
     }
     
-
     submit(){
         Object.keys(this.getForm().controls).forEach(field =>
             this.getForm().get(field).markAsTouched()
@@ -32,13 +28,7 @@ export abstract class BaseWizardStep<T>{
             
             this.entity = this.getForm().value;
             this.stepComplete.emit(this.entity);
-            this.wizardService.setEntity(this.entity)
         }
-        //console.log("entity", this.entity)
-        //super.onSubmit(this.entity);
     }
 
-    success() {
-        this.stepComplete.emit("success");
-    }
 }

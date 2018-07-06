@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { environment } from '@env/environment';
+import { MyCustomer } from '@app/my-travel-wizard/wizard.service';
 
 @Component({
   selector: 'app-about',
@@ -11,7 +12,10 @@ export class AboutComponent implements OnInit {
 
   version: string = environment.version;
 
-  constructor() { }
+  entity:MyCustomer = <MyCustomer>{}
+
+  constructor() { 
+   }
 
   ngOnInit() { }
 
