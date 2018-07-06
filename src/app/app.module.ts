@@ -18,7 +18,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { NgSelectModule } from '@ng-select/ng-select';
 
-import { QuoteDataModule } from '@app/quoteData/quoteData.module';
 import { TrpComponent } from './my-travel-wizard/trp/trp.component';
 import { OptComponent } from './my-travel-wizard/opt/opt.component';
 import { MedComponent } from './my-travel-wizard/med/med.component';
