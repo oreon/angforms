@@ -40,7 +40,6 @@ import { MedComponent } from './my-travel-wizard/med/med.component';
     AboutModule,
     LoginModule,
 
-    QuoteDataModule,
     
     AppRoutingModule,
     NgSelectModule,
