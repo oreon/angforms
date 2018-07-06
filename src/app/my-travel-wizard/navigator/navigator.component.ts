@@ -11,16 +11,7 @@ export class NavigatorComponent implements OnInit {
 
   @Input() currentInd: number = 0;
 
-  steps = [
-    { name: 'trip',
-    },
-    { name: 'options',
-      // disabledImg: 'assets/travel/quote.png',
-      // activeImg: 'assets/travel/quoteActiveTL.png',
-      // completeImg: 'assets/travel/quoteActive.png'
-    },
-    { name: 'medical'}
-  ]
+  @Input() steps:any[]
 
   ngOnInit() {
   }

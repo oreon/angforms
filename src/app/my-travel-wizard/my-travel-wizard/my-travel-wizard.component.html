@@ -2,7 +2,7 @@
   <h3> Main Wizard</h3>
   <div class="row">
     <div class="col-lg-5" [hidden]="showFinal()">
-      <app-navigator  [currentInd]="currentInd"></app-navigator>
+      <app-navigator  [currentInd]="currentInd" [steps]="steps"></app-navigator>
     </div>
 
     <div class="col-lg-7">
@@ -11,7 +11,7 @@
       <app-med  [hidden]="!showMe(2)"   (stepComplete)="onNext($event)"></app-med>
     </div>
 
-    <final-message [hidden]="!showFinal()"></final-message>  
+    <final-message [hidden]="!showFinal()" [entity]="entity"></final-message>  
     
   </div>
 

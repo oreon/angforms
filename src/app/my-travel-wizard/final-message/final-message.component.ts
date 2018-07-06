@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { WizardService, MyCustomer } from '@app/my-travel-wizard/wizard.service';
 
 @Component({
@@ -8,10 +8,10 @@ import { WizardService, MyCustomer } from '@app/my-travel-wizard/wizard.service'
 })
 export class FinalMessageComponent implements OnInit {
 
-  entity:MyCustomer
+  @Input() entity:MyCustomer = <MyCustomer>{};
 
-  constructor(protected wizardService:WizardService) {
-    this.entity = wizardService.entity;
+  constructor() {
+    
    }
 
   ngOnInit() {

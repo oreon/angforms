@@ -7,7 +7,7 @@ export abstract class BaseWizardStep<T>{
     
     entity:T 
 
-    @Output() stepComplete = new EventEmitter<string>();
+    @Output() stepComplete = new EventEmitter<any>();
 
     abstract getForm():FormGroup
     abstract createForm():void;
@@ -29,8 +29,9 @@ export abstract class BaseWizardStep<T>{
         console.log(this.getForm().value)
     
         if(this.getForm().valid){
-            this.stepComplete.emit("success");
+            
             this.entity = this.getForm().value;
+            this.stepComplete.emit(this.entity);
             this.wizardService.setEntity(this.entity)
         }
         //console.log("entity", this.entity)
