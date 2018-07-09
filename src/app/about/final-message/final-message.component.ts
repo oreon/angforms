@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WizardService, MyCustomer } from '@app/my-travel-wizard/wizard.service';
+
 
 @Component({
   selector: 'final-message',
@@ -8,7 +8,7 @@ import { WizardService, MyCustomer } from '@app/my-travel-wizard/wizard.service'
 })
 export class FinalMessageComponent implements OnInit {
 
-  @Input() entity:MyCustomer = <MyCustomer>{};
+  @Input() entity:any;
 
   constructor() {
     

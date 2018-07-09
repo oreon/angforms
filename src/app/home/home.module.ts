@@ -10,7 +10,7 @@ import { QuoteService } from './quote.service';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule,NG_SELECT_DEFAULT_CONFIG } from '@ng-select/ng-select';
-import { NgbAccordion, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordion, NgbModule, NgbDateAdapter, NgbDateNativeAdapter } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -28,7 +28,8 @@ import { NgbAccordion, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
   ],
   providers: [
-    QuoteService
+    QuoteService,
+    {provide: NgbDateAdapter, useClass: NgbDateNativeAdapter}
   ]
 })
 export class HomeModule { }

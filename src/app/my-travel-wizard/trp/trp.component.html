@@ -1,8 +1,22 @@
 <div class="form-wrapper text-center" >
+   
+
+
     <h2 class="text-center">Trip </h2>
     <form [formGroup]="tripForm" (submit)="submit()" novalidate>
-        <input formControlName="email" placeholder="email">
-        <input formControlName="mobile" placeholder="mobile">
+        
+        <div class="form-group">
+            <label for="lastName-input"><span translate>lastName</span></label>
+<input type="text" class="form-control"     formControlName="lastName"  id="lastName-input"  [(ngModel)]="entity.lastName"
+>
+            <div class="alert alert-danger" *ngIf="tripForm.get('lastName').errors && tripForm.get('lastName').touched">
+                <p *ngIf="tripForm.get('lastName').errors.required">Required !</p>
+                <p *ngIf="tripForm.get('lastName').errors.pattern">Invalid input!</p>
+            </div>
+        </div>
+
+        <!-- <input formControlName="email" placeholder="email">
+        <input formControlName="mobile" placeholder="mobile"> -->
       <button type="submit" class="btn btn-primary">Next</button>
     </form>
 </div>

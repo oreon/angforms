@@ -71,8 +71,8 @@
          </div>
 
          <div class="alert alert-danger" *ngIf="petForm.get('neutered').errors && petForm.get('neutered').touched">
-          
-          <p *ngIf="petForm.get('neutered').errors.required">Sorry you cant sell this pet</p>
+          <p *ngIf="petForm.get('neutered').errors.requiredFalse">Pet must not be neutered !</p>
+          <p *ngIf="petForm.get('neutered').errors.required">Required</p>
       </div>  
     </div>
 

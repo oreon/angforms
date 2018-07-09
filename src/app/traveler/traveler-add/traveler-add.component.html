@@ -10,24 +10,22 @@
                 <label for="firstName-input"><span translate>firstName</span></label>
 <input type="text" class="form-control"     formControlName="firstName"  id="firstName-input"  [(ngModel)]="entity.firstName"
 >
-                <div class="alert alert-danger" *ngIf="travelerForm.get('firstName').errors && travelerForm.get('firstName').touched">
-                    <p *ngIf="travelerForm.get('firstName').errors.required">Required !</p>
-                    <p *ngIf="travelerForm.get('firstName').errors.pattern">Invalid input!</p>
-                </div>
-            </div>
+                    <div class="alert alert-danger" *ngIf="travelerForm.get('firstName').errors && travelerForm.get('firstName').touched">
+        <p *ngIf="travelerForm.get('firstName').errors.required">Required !</p>
+    </div>
 
+            </div>
 
 
             <div class="form-group">
                 <label for="lastName-input"><span translate>lastName</span></label>
 <input type="text" class="form-control"     formControlName="lastName"  id="lastName-input"  [(ngModel)]="entity.lastName"
 >
-                <div class="alert alert-danger" *ngIf="travelerForm.get('lastName').errors && travelerForm.get('lastName').touched">
-                    <p *ngIf="travelerForm.get('lastName').errors.required">Required !</p>
-                    <p *ngIf="travelerForm.get('lastName').errors.pattern">Invalid input!</p>
-                </div>
-            </div>
+                    <div class="alert alert-danger" *ngIf="travelerForm.get('lastName').errors && travelerForm.get('lastName').touched">
+        <p *ngIf="travelerForm.get('lastName').errors.required">Required !</p>
+    </div>
 
+            </div>
 
 
             <div class="form-group">
@@ -39,12 +37,11 @@
 <ng-option value="Transgender">TRANSGENDER</ng-option>
                         </ng-select>
 
-                <div class="alert alert-danger" *ngIf="travelerForm.get('gender').errors && travelerForm.get('gender').touched">
-                    <p *ngIf="travelerForm.get('gender').errors.required">Required !</p>
-                    <p *ngIf="travelerForm.get('gender').errors.pattern">Invalid input!</p>
-                </div>
-            </div>
+                    <div class="alert alert-danger" *ngIf="travelerForm.get('gender').errors && travelerForm.get('gender').touched">
+        <p *ngIf="travelerForm.get('gender').errors.required">Required !</p>
+    </div>
 
+            </div>
 
 
             <div class="form-group">
@@ -52,19 +49,18 @@
 <div class="input-group">
                             <input class="form-control" placeholder="yyyy-mm-dd"     formControlName="dob"  id="dob-input"  [(ngModel)]="entity.dob"
 
-                                     ngbDatepicker #d_dob="ngbDatepicker">
+                                   ngbDatepicker #d_dob="ngbDatepicker">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" (click)="d_dob.toggle()" type="button">
                                     <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
                                 </button>
                             </div>
                         </div>
-                <div class="alert alert-danger" *ngIf="travelerForm.get('dob').errors && travelerForm.get('dob').touched">
-                    <p *ngIf="travelerForm.get('dob').errors.required">Required !</p>
-                    <p *ngIf="travelerForm.get('dob').errors.pattern">Invalid input!</p>
-                </div>
-            </div>
+                    <div class="alert alert-danger" *ngIf="travelerForm.get('dob').errors && travelerForm.get('dob').touched">
+        <p *ngIf="travelerForm.get('dob').errors.required">Required !</p>
+    </div>
 
+            </div>
 
 
             <div class="form-group">
@@ -75,15 +71,14 @@
 <ng-option value="Dependant">DEPENDANT</ng-option>
                         </ng-select>
 
-                <div class="alert alert-danger" *ngIf="travelerForm.get('relationship').errors && travelerForm.get('relationship').touched">
-                    <p *ngIf="travelerForm.get('relationship').errors.required">Required !</p>
-                    <p *ngIf="travelerForm.get('relationship').errors.pattern">Invalid input!</p>
-                </div>
+                    <div class="alert alert-danger" *ngIf="travelerForm.get('relationship').errors && travelerForm.get('relationship').touched">
+        <p *ngIf="travelerForm.get('relationship').errors.required">Required !</p>
+    </div>
+
             </div>
 
 
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary"><span translate>Submit</span></button>
         </form>
     </div>
 </div>

@@ -4,13 +4,13 @@ import { finalize } from 'rxjs/operators';
 import { QuoteService } from './quote.service';
 
 import {Component,  OnInit, Output} from '@angular/core';
-import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { Validators, FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 import { Traveler } from '@app/traveler/traveler';
 
+import {CustomValidators}  from '../base/custom-Validators'
 
 
-  
 
 
 @Component({
@@ -50,9 +50,9 @@ export class HomeComponent implements OnInit {
         name : ['', [Validators.required, Validators.minLength(3),
              Validators.pattern('^[a-zA-Z]+$')]],
         price : ['', [Validators.required]],
-        dob : ['', [Validators.required]],
+        dob : ['', [Validators.required, CustomValidators.past]],
         weight : ['', [Validators.required]],
-        neutered : ['', [ Validators.requiredTrue]],
+        neutered : ['', [ CustomValidators.requiredFalse]],
         description : ['', [Validators.required]],
         status : ['', [Validators.required]],
         

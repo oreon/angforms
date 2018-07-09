@@ -1,42 +1,62 @@
 {
-    //SingleTravelWizard
-"Trip_haveCare": "FR-Have care",
+    //travelquote
+"Traveler_firstName": "FR-First name",
 
-"Trip_alreadyDeparted": "FR-Already departed",
+"Traveler_lastName": "FR-Last name",
 
-"Trip_over60": "FR-Over60",
+"Traveler_gender": "FR-Gender",
 
-"Trip_departure": "FR-Departure",
+"Traveler_dob": "FR-Dob",
 
-"Trip_returnDate": "FR-Return date",
+"Traveler_relationship": "FR-Relationship",
 
-"Options_dobOldest": "FR-Dob oldest",
+"QuoteData_haveCare": "FR-Have care",
 
-"Options_planMember": "FR-Plan member",
+"QuoteData_alreadyDeparted": "FR-Already departed",
 
-"Options_groupNumber": "FR-Group number",
+"QuoteData_over60": "FR-Over60",
 
-"Options_idNumber": "FR-Id number",
+"QuoteData_departure": "FR-Departure",
 
-"Options_planType": "FR-Plan type",
+"QuoteData_returnDate": "FR-Return date",
 
-"Options_interestedExtra": "FR-Interested extra",
+"QuoteData_dobOldest": "FR-Dob oldest",
 
-"Medical_travellingForMedical": "FR-Travelling for medical",
+"QuoteData_planMember": "FR-Plan member",
 
-"Medical_travellingAgainstAdvice": "FR-Travelling against advice",
+"QuoteData_groupNumber": "FR-Group number",
 
-"Medical_twoOrMoreStrokes": "FR-Two or more strokes",
+"QuoteData_idNumber": "FR-Id number",
 
-"Medical_icd": "FR-Icd",
+"QuoteData_planType": "FR-Plan type",
 
-"Medical_homeOxygen": "FR-Home oxygen",
+"QuoteData_interestedExtra": "FR-Interested extra",
 
-"Medical_terminal": "FR-Terminal",
+"QuoteData_initialPaymentWithinLast72": "FR-Initial payment within last72",
 
-"Medical_ninetyDayStable": "FR-Ninety day stable",
+"QuoteData_coverageLevel": "FR-Coverage level",
 
-"Travelers_traveler": "FR-Traveler",
+"QuoteData_chosenExtra": "FR-Chosen extra",
+
+"QuoteData_travellingForMedical": "FR-Travelling for medical",
+
+"QuoteData_travellingAgainstAdvice": "FR-Travelling against advice",
+
+"QuoteData_twoOrMoreStrokes": "FR-Two or more strokes",
+
+"QuoteData_icd": "FR-Icd",
+
+"QuoteData_homeOxygen": "FR-Home oxygen",
+
+"QuoteData_terminal": "FR-Terminal",
+
+"QuoteData_ninetyDayStable": "FR-Ninety day stable",
+
+"QuoteData_planTotal": "FR-Plan total",
+
+"QuoteData_trn": "FR-Trn",
+
+"QuoteData_traveler": "FR-Traveler",
 
 
 

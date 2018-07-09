@@ -1,7 +1,6 @@
 import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
-import { MyCustomer } from '@app/my-travel-wizard/wizard.service';
-import * as _ from "lodash";
-import { BaseWizardComponenet } from '@app/base/base-wisard';
+
+import { BaseWizardComponenet } from '@app/base/base-wizard';
 
 
 @Component({

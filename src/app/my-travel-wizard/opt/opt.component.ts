@@ -5,7 +5,7 @@ import { BaseWizardStep } from '@app/base/base-wizardstep';
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
-import { WizardService } from '@app/my-travel-wizard/wizard.service';
+
 
 export interface Options{
   amount:string
@@ -16,21 +16,22 @@ export interface Options{
   templateUrl: './opt.component.html',
   styleUrls: ['./opt.component.scss']
 })
-export class OptComponent extends BaseWizardStep<Options> implements OnInit  {
+export class OptComponent extends BaseWizardStep implements OnInit  {
 
   errorMessage: string;
-  public tripForm: FormGroup;
+  public myForm: FormGroup;
 
   constructor(protected fb: FormBuilder){ 
-    super(fb); 
+    super(); 
+    this.createForm();
    }
 
-  getForm():FormGroup{
-    return this.tripForm;
+   getTheForm():FormGroup{
+    return this.myForm;
   }
 
    createForm(): void {
-      this.tripForm= this.fb.group({
+      this.myForm= this.fb.group({
         amount: ['',[Validators.required]],
     
       });

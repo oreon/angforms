@@ -21,6 +21,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { TrpComponent } from './my-travel-wizard/trp/trp.component';
 import { OptComponent } from './my-travel-wizard/opt/opt.component';
 import { MedComponent } from './my-travel-wizard/med/med.component';
+//import { QuoteDataModule } from '@app/quoteData/quoteData.module';
+import { WizardModule } from '@app/wiz.component';
+import { MyCompsModule } from '@app/mycomps';
 
 // import 'rxjs/add/operator/map';
 // import 'rxjs/add/operator/toPromise';
@@ -39,8 +42,8 @@ import { MedComponent } from './my-travel-wizard/med/med.component';
     HomeModule,
     AboutModule,
     LoginModule,
-
-    
+    //QuoteDataModule,
+    WizardModule,
     AppRoutingModule,
     NgSelectModule,
   ],
@@ -49,7 +52,7 @@ import { MedComponent } from './my-travel-wizard/med/med.component';
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
-    
+    MyCompsModule,
     HttpClientModule
   ],
   declarations: [AppComponent],

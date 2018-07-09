@@ -1,7 +1,7 @@
 <div class="form-wrapper text-center" >
     <h2 class="text-center">Options </h2>
-    <form [formGroup]="tripForm" (submit)="submit()" >
-      <input formControlName="amount" placeholder="options" type="number">
+    <form [formGroup]="myForm" (submit)="submit()" >
+      <input formControlName="amount" placeholder="options" type="number"  [(ngModel)]="entity.amount">
       <button type="submit" class="btn btn-primary">Next</button>
     </form>
 </div>

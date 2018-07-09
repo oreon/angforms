@@ -1,0 +1,145 @@
+<div class="container-wrapper container d-flex justify-content-center align-items-center">
+    <div class="form-wrapper text-center" style="width: 80%; background-color: #eef ; padding: 1.5em">
+        <h2 class="text-center">Add/Edit Trip </h2>
+        <form [formGroup]="tripForm" (submit)="submit()" novalidate>
+
+            <div class="form-group">
+                <label for="firstName-input"><span translate>firstName</span></label>
+                <input type="text" class="form-control" formControlName="firstName" id="firstName-input"
+                       [(ngModel)]="entity.firstName"
+                >
+                <div class="alert alert-danger"
+                     *ngIf="tripForm.get('firstName').errors && tripForm.get('firstName').touched">
+                    <p *ngIf="tripForm.get('firstName').errors.min" translate>must_be_min 5</p>
+                    <p *ngIf="tripForm.get('firstName').errors.required">Required !</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="lastName-input"><span translate>lastName</span></label>
+                <input type="text" class="form-control" formControlName="lastName" id="lastName-input"
+                       [(ngModel)]="entity.lastName"
+                >
+                <div class="alert alert-danger"
+                     *ngIf="tripForm.get('lastName').errors && tripForm.get('lastName').touched">
+                    <p *ngIf="tripForm.get('lastName').errors.pattern" translate>invalid_pattern !</p>
+                    <p *ngIf="tripForm.get('lastName').errors.required">Required !</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="haveCare-input"><span translate>haveCare</span></label>
+                <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
+                     formControlName="haveCare" id="haveCare-input" [(ngModel)]="entity.haveCare"
+                >
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                    </label>
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                    </label>
+                </div>
+
+                <div class="alert alert-danger"
+                     *ngIf="tripForm.get('haveCare').errors && tripForm.get('haveCare').touched">
+                    <p *ngIf="tripForm.get('haveCare').errors.required">Required !</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="alreadyDeparted-input"><span translate>alreadyDeparted</span></label>
+                <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
+                     formControlName="alreadyDeparted" id="alreadyDeparted-input" [(ngModel)]="entity.alreadyDeparted"
+                >
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                    </label>
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                    </label>
+                </div>
+
+                <div class="alert alert-danger"
+                     *ngIf="tripForm.get('alreadyDeparted').errors && tripForm.get('alreadyDeparted').touched">
+                    <p *ngIf="tripForm.get('alreadyDeparted').errors.requiredFalse" translate>must_be_false !</p>
+                    <p *ngIf="tripForm.get('alreadyDeparted').errors.required">Required !</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="over60-input"><span translate>over60</span></label>
+                <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic"
+                     formControlName="over60" id="over60-input" [(ngModel)]="entity.over60"
+                >
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" [value]="true"> <span translate>Yes</span>
+                    </label>
+                    <label ngbButtonLabel class="btn-primary">
+                        <input ngbButton type="radio" [value]="false"> <span translate>No</span>
+                    </label>
+                </div>
+
+                <div class="alert alert-danger" *ngIf="tripForm.get('over60').errors && tripForm.get('over60').touched">
+                    <p *ngIf="tripForm.get('over60').errors.requiredFalse" translate>must_be_false !</p>
+                    <p *ngIf="tripForm.get('over60').errors.required">Required !</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="departure-input"><span translate>departure</span></label>
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" formControlName="departure"
+                           id="departure-input" [(ngModel)]="entity.departure"
+
+                           ngbDatepicker #d_departure="ngbDatepicker">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" (click)="d_departure.toggle()" type="button">
+                            <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                        </button>
+                    </div>
+                </div>
+                <div class="alert alert-danger"
+                     *ngIf="tripForm.get('departure').errors && tripForm.get('departure').touched">
+                    <p *ngIf="tripForm.get('departure').errors.future" translate>must_be_in_future</p>
+                    <p *ngIf="tripForm.get('departure').errors.required">Required !</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="returnDate-input"><span translate>returnDate</span></label>
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" formControlName="returnDate"
+                           id="returnDate-input" [(ngModel)]="entity.returnDate"
+
+                           ngbDatepicker #d_returnDate="ngbDatepicker">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" (click)="d_returnDate.toggle()" type="button">
+                            <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                        </button>
+                    </div>
+                </div>
+                <div class="alert alert-danger"
+                     *ngIf="tripForm.get('returnDate').errors && tripForm.get('returnDate').touched">
+                    <p *ngIf="tripForm.get('returnDate').errors.future" translate>must_be_in_future</p>
+                    <p *ngIf="tripForm.get('returnDate').errors.required">Required !</p>
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary"><span translate>Submit</span></button>
+        </form>
+    </div>
+</div>

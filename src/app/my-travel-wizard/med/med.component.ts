@@ -5,7 +5,7 @@ import { BaseWizardStep } from '@app/base/base-wizardstep';
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Validators, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
-import { WizardService } from '@app/my-travel-wizard/wizard.service';
+
 
 export interface Med{
   medicalConditions:string
@@ -16,16 +16,17 @@ export interface Med{
   templateUrl: './med.component.html',
   styleUrls: ['./med.component.scss']
 })
-export class MedComponent extends BaseWizardStep<Med> implements OnInit  {
+export class MedComponent extends BaseWizardStep implements OnInit  {
 
   errorMessage: string;
   public tripForm: FormGroup;
 
   constructor(protected fb: FormBuilder){ 
-    super(fb); 
+    super(); 
+    this.createForm();
    }
 
-  getForm():FormGroup{
+  getTheForm():FormGroup{
     return this.tripForm;
   }
 

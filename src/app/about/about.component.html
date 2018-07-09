@@ -1,4 +1,45 @@
 <div class="container-fluid">
-  {{entity.email}}
-  <app-my-travel-wizard [entity]= "entity" ></app-my-travel-wizard>
+  {{entity | json}}
+  <!-- <app-my-travel-wizard [hidden]="wizardDone" [entity]= "entity" (wizardComplete) = "onWizardComplete()"></app-my-travel-wizard>
+  <final-message [hidden]="!wizardDone" [entity]="entity"></final-message>  -->
+
+  <amt  [entity]="entity" #dw></amt>
+  
+  <ng-template #accDataInput>
+      
+  </ng-template>
+  
+
+  <app-navigator [hidden]="w.done()"  [currentInd]="w.activeIndex" [steps]="steps"></app-navigator>
+  {{w.done()}} {{w.activeIndex}}
+  <wizard #w>
+    <wizard-step header="details"> 
+        <ngb-accordion [closeOthers]="true" activeIds="getActiveIds()" #acc="ngbAccordion">
+            <ngb-panel id="t1" title="amt" #t1>
+              {{t1.title | json}
+              <ng-template ngbPanelContent>
+                <amt  [entity]="entity" #dw  (stepComplete)="goNext('t1')"></amt>
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel id="t2" title="med" [disabled]="false" #t2 >
+              <ng-template ngbPanelContent>
+                <med [entity]="entity" #dw (stepComplete)="goNext('t2')"> </med> 
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel id="t3" title="confirm amount" [disabled]="isDisabled('t3')">
+              <ng-template ngbPanelContent>
+                <amt  [entity]="entity" #dw  (stepComplete)="goNext($event)"></amt>
+                </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+    </wizard-step>
+    <wizard-step header="Medical" >
+       <med [entity]="entity" #dw> </med> 
+    </wizard-step>   
+    <wizard-step header="AMount"  > 
+        <amt  [entity]="entity" #dw></amt>
+    </wizard-step>
+  </wizard>
+
 </div>
+

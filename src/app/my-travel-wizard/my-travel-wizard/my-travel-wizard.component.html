@@ -1,17 +1,17 @@
 <div class="container-fluid px-0">
   <h3> Main Wizard</h3>
+  {{entity | json}}
   <div class="row">
+   
     <div class="col-lg-5" [hidden]="wizardDone()">
       <app-navigator  [currentInd]="currentInd" [steps]="steps"></app-navigator>
     </div>
 
     <div class="col-lg-7">
-      <app-trp  [hidden]="!showMe(0)"  (stepComplete)="onNext($event)"></app-trp>
-      <app-opt  [hidden]="!showMe(1)"  (stepComplete)="onNext($event)"></app-opt>
-      <app-med  [hidden]="!showMe(2)"   (stepComplete)="onNext($event)"></app-med>
-    </div>
-
-    <final-message [hidden]="!wizardDone()" [entity]="entity"></final-message>  
+      <app-trp  [hidden]="!showMe(0)" [entity]="entity" (stepComplete)="onNext($event)"></app-trp>
+      <app-opt  [hidden]="!showMe(1)" [entity]="entity"  (stepComplete)="onNext($event)"></app-opt>
+      <app-med  [hidden]="!showMe(2)" [entity]="entity"  (stepComplete)="onNext($event)"></app-med>
+    </div>  
     
   </div>
 

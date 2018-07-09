@@ -6,19 +6,19 @@ import { TrpComponent } from './trp/trp.component';
 import { MyTravelWizardComponent } from './my-travel-wizard/my-travel-wizard.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { WizardService } from '@app/my-travel-wizard/wizard.service';
-import { FinalMessageComponent } from './final-message/final-message.component';
+
+//import { FinalMessageComponent } from './final-message/final-message.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-     ReactiveFormsModule
+    ReactiveFormsModule
   ],
-  declarations: [MedComponent, OptComponent, TrpComponent, MyTravelWizardComponent, NavigatorComponent, FinalMessageComponent]
+  declarations: [MedComponent, OptComponent, TrpComponent, MyTravelWizardComponent, NavigatorComponent]
   ,exports:[
-    MyTravelWizardComponent
+    MyTravelWizardComponent, NavigatorComponent
   ],
-  providers: [WizardService]
+  providers: []
 })
 export class MyTravelWizardModule { }

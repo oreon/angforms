@@ -1,43 +1,63 @@
 
 {
-    //SingleTravelWizard
-"Trip_haveCare": "Have care",
+    //travelquote
+"Traveler_firstName": "First name",
 
-"Trip_alreadyDeparted": "Already departed",
+"Traveler_lastName": "Last name",
 
-"Trip_over60": "Over60",
+"Traveler_gender": "Gender",
 
-"Trip_departure": "Departure",
+"Traveler_dob": "Dob",
 
-"Trip_returnDate": "Return date",
+"Traveler_relationship": "Relationship",
 
-"Options_dobOldest": "Dob oldest",
+"QuoteData_haveCare": "Have care",
 
-"Options_planMember": "Plan member",
+"QuoteData_alreadyDeparted": "Already departed",
 
-"Options_groupNumber": "Group number",
+"QuoteData_over60": "Over60",
 
-"Options_idNumber": "Id number",
+"QuoteData_departure": "Departure",
 
-"Options_planType": "Plan type",
+"QuoteData_returnDate": "Return date",
 
-"Options_interestedExtra": "Interested extra",
+"QuoteData_dobOldest": "Dob oldest",
 
-"Medical_travellingForMedical": "Travelling for medical",
+"QuoteData_planMember": "Plan member",
 
-"Medical_travellingAgainstAdvice": "Travelling against advice",
+"QuoteData_groupNumber": "Group number",
 
-"Medical_twoOrMoreStrokes": "Two or more strokes",
+"QuoteData_idNumber": "Id number",
 
-"Medical_icd": "Icd",
+"QuoteData_planType": "Plan type",
 
-"Medical_homeOxygen": "Home oxygen",
+"QuoteData_interestedExtra": "Interested extra",
 
-"Medical_terminal": "Terminal",
+"QuoteData_initialPaymentWithinLast72": "Initial payment within last72",
 
-"Medical_ninetyDayStable": "Ninety day stable",
+"QuoteData_coverageLevel": "Coverage level",
 
-"Travelers_traveler": "Traveler",
+"QuoteData_chosenExtra": "Chosen extra",
+
+"QuoteData_travellingForMedical": "Travelling for medical",
+
+"QuoteData_travellingAgainstAdvice": "Travelling against advice",
+
+"QuoteData_twoOrMoreStrokes": "Two or more strokes",
+
+"QuoteData_icd": "Icd",
+
+"QuoteData_homeOxygen": "Home oxygen",
+
+"QuoteData_terminal": "Terminal",
+
+"QuoteData_ninetyDayStable": "Ninety day stable",
+
+"QuoteData_planTotal": "Plan total",
+
+"QuoteData_trn": "Trn",
+
+"QuoteData_traveler": "Traveler",
 
 
 
